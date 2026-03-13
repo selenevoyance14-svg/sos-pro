@@ -1,12 +1,13 @@
 import Link from "next/link";
 import { categories } from "@/data/metiers";
+import HeaderSearch from "./HeaderSearch";
 
 export default function Header() {
   return (
     <header className="bg-red-600 text-white shadow-lg">
       <div className="max-w-6xl mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
-          <Link href="/" className="flex items-center gap-2">
+        <div className="flex items-center justify-between h-16 gap-4">
+          <Link href="/" className="flex items-center gap-2 flex-shrink-0">
             <span className="text-2xl font-extrabold tracking-tight">
               SOS<span className="text-yellow-300">Pro</span>
             </span>
@@ -14,7 +15,7 @@ export default function Header() {
               .fr
             </span>
           </Link>
-          <nav className="hidden md:flex items-center gap-6">
+          <nav className="hidden lg:flex items-center gap-6">
             {categories.map((cat) => (
               <Link
                 key={cat.slug}
@@ -25,6 +26,7 @@ export default function Header() {
               </Link>
             ))}
           </nav>
+          <HeaderSearch />
         </div>
       </div>
     </header>
