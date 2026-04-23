@@ -13,13 +13,12 @@ import {
 } from "@/data/content";
 import { numerosUrgence, liensUtiles } from "@/data/numeros-utiles";
 
-export const dynamicParams = true;
+export const dynamicParams = false;
 
 export async function generateStaticParams() {
-  const topVilles = villes.slice(0, 10);
   const params: { metier: string; ville: string }[] = [];
   for (const m of metiers) {
-    for (const v of topVilles) {
+    for (const v of villes) {
       params.push({ metier: m.slug, ville: v.slug });
     }
   }
