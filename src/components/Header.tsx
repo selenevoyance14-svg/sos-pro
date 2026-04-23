@@ -25,6 +25,12 @@ export default function Header() {
                 {cat.icon} {cat.nom}
               </Link>
             ))}
+            <Link
+              href="/blog"
+              className="text-sm font-medium hover:text-yellow-300 transition-colors"
+            >
+              Blog
+            </Link>
           </nav>
           <HeaderSearch />
         </div>

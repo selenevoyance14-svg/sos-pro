@@ -1,6 +1,7 @@
 import { MetadataRoute } from "next";
 import { metiers, categories } from "@/data/metiers";
 import { villes } from "@/data/villes";
+import { articles } from "@/data/articles";
 
 const BASE_URL = "https://sos-pro.fr";
 
@@ -45,6 +46,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
         priority: 0.6,
       });
     }
+  }
+
+  // Blog index
+  entries.push({
+    url: `${BASE_URL}/blog`,
+    lastModified: new Date(),
+    changeFrequency: "weekly",
+    priority: 0.7,
+  });
+
+  // Blog articles
+  for (const a of articles) {
+    entries.push({
+      url: `${BASE_URL}/blog/${a.slug}`,
+      lastModified: new Date(a.date),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    });
   }
 
   return entries;
