@@ -11,6 +11,9 @@ export const categories = [
   { slug: "bien-etre", nom: "Bien-être & Santé", icon: "🧘" },
   { slug: "artisans", nom: "Artisans & Bâtiment", icon: "🔧" },
   { slug: "services", nom: "Services & Loisirs", icon: "📸" },
+  { slug: "beaute", nom: "Beauté & Coiffure", icon: "💅" },
+  { slug: "auto", nom: "Auto & Moto", icon: "🚗" },
+  { slug: "animaux", nom: "Animaux", icon: "🐾" },
 ];
 
 export const metiers: Metier[] = [
@@ -491,6 +494,489 @@ export const metiers: Metier[] = [
         question: "Le déménageur est-il responsable des dégâts ?",
         reponse:
           "Oui, le déménageur est responsable des objets transportés. Vérifiez son assurance et déclarez les objets de valeur. Faites un état des lieux à l'arrivée.",
+      },
+    ],
+  },
+
+  // === ARTISANS (NOUVEAUX) ===
+  {
+    slug: "chauffagiste",
+    nom: "Chauffagiste",
+    categorie: "artisans",
+    description:
+      "Le chauffagiste installe, entretient et dépanne les systèmes de chauffage : chaudières gaz/fioul, pompes à chaleur, planchers chauffants, radiateurs. Il intervient aussi pour les diagnostics énergétiques.",
+    icon: "🔥",
+    faq: [
+      {
+        question: "Combien coûte un chauffagiste ?",
+        reponse:
+          "Le tarif horaire d'un chauffagiste est de 50€ à 80€ HT. Un entretien annuel de chaudière coûte entre 80€ et 180€. L'installation d'une pompe à chaleur varie de 8 000€ à 18 000€.",
+      },
+      {
+        question: "L'entretien chaudière est-il obligatoire ?",
+        reponse:
+          "Oui, l'entretien annuel d'une chaudière gaz ou fioul est obligatoire en France. C'est le locataire ou propriétaire occupant qui doit le faire réaliser par un professionnel certifié.",
+      },
+      {
+        question: "Faut-il un chauffagiste RGE ?",
+        reponse:
+          "Pour bénéficier des aides à la rénovation énergétique (MaPrimeRénov', CEE), votre chauffagiste doit être certifié RGE Qualibat ou Qualipac.",
+      },
+    ],
+  },
+  {
+    slug: "ramoneur",
+    nom: "Ramoneur",
+    categorie: "artisans",
+    description:
+      "Le ramoneur nettoie les conduits de fumée des cheminées, poêles à bois et chaudières. Le ramonage est obligatoire 1 à 2 fois par an pour la sécurité et l'efficacité du chauffage.",
+    icon: "🧹",
+    faq: [
+      {
+        question: "Combien coûte un ramonage ?",
+        reponse:
+          "Le ramonage d'une cheminée coûte entre 50€ et 90€. Pour un poêle à granulés, comptez 80€ à 120€. Le ramoneur délivre un certificat exigé par l'assurance.",
+      },
+      {
+        question: "Le ramonage est-il obligatoire ?",
+        reponse:
+          "Oui, le ramonage est obligatoire 1 à 2 fois par an selon la commune. En cas de sinistre sans certificat de ramonage récent, votre assurance peut refuser de vous indemniser.",
+      },
+      {
+        question: "Quand faire ramoner sa cheminée ?",
+        reponse:
+          "Idéalement avant la période de chauffe (septembre-octobre) et éventuellement une seconde fois en cours d'hiver pour les utilisateurs intensifs.",
+      },
+    ],
+  },
+  {
+    slug: "plaquiste",
+    nom: "Plaquiste",
+    categorie: "artisans",
+    description:
+      "Le plaquiste réalise les cloisons, plafonds et doublages en plaques de plâtre (placo). Il installe aussi l'isolation thermique et phonique, et prépare les surfaces pour la peinture.",
+    icon: "📐",
+    faq: [
+      {
+        question: "Combien coûte la pose de placo au m² ?",
+        reponse:
+          "La pose de placo coûte entre 25€ et 50€/m² fourni-posé pour une cloison simple. Un plafond suspendu varie de 30€ à 60€/m². Comptez plus pour l'isolation intégrée.",
+      },
+      {
+        question: "Plaquiste ou peintre : qui pose le placo ?",
+        reponse:
+          "C'est le plaquiste qui pose et joint les plaques. Le peintre intervient ensuite pour la sous-couche et la peinture finale. Certains artisans proposent les deux.",
+      },
+      {
+        question: "Combien de temps pour une cloison en placo ?",
+        reponse:
+          "Comptez 1 à 2 jours pour une cloison de 5m², jointoiement et séchage compris. Une pièce entière peut être réalisée en 3 à 5 jours.",
+      },
+    ],
+  },
+  {
+    slug: "vitrier",
+    nom: "Vitrier",
+    categorie: "artisans",
+    description:
+      "Le vitrier remplace les vitres cassées, installe les fenêtres double vitrage, les vérandas, miroirs et parois de douche. Il intervient aussi en urgence après un bris ou une effraction.",
+    icon: "🪟",
+    faq: [
+      {
+        question: "Combien coûte le remplacement d'une vitre ?",
+        reponse:
+          "Le remplacement d'une vitre simple coûte entre 100€ et 250€ selon la taille. Une vitre double vitrage varie de 150€ à 400€. En urgence, prévoyez un supplément de 50% à 100%.",
+      },
+      {
+        question: "Un vitrier intervient-il en urgence ?",
+        reponse:
+          "Oui, la plupart des vitriers proposent une intervention 24h/24 après un bris ou une effraction. Demandez toujours un devis ferme avant intervention pour éviter les arnaques.",
+      },
+      {
+        question: "Double ou triple vitrage : que choisir ?",
+        reponse:
+          "Le double vitrage suffit pour la majorité des cas (zones tempérées). Le triple vitrage est recommandé pour les régions très froides ou les façades nord exposées au vent.",
+      },
+    ],
+  },
+
+  // === BEAUTÉ (NOUVEAUX) ===
+  {
+    slug: "coiffeur",
+    nom: "Coiffeur",
+    categorie: "beaute",
+    description:
+      "Le coiffeur propose coupes, colorations, brushings, soins capillaires et coiffures pour mariages et événements. Il travaille en salon ou à domicile, pour hommes, femmes et enfants.",
+    icon: "💇",
+    faq: [
+      {
+        question: "Combien coûte une coupe chez le coiffeur ?",
+        reponse:
+          "Une coupe femme coûte entre 25€ et 60€, une coupe homme entre 15€ et 35€. Les colorations varient de 40€ à 120€. Les tarifs sont plus élevés dans les grandes villes.",
+      },
+      {
+        question: "Comment choisir un bon coiffeur ?",
+        reponse:
+          "Consultez les avis Google, demandez des recommandations, regardez les portfolios Instagram. Une consultation préalable permet de juger du feeling et des conseils techniques.",
+      },
+      {
+        question: "Coiffeur à domicile : tarifs et fonctionnement ?",
+        reponse:
+          "Le coiffeur à domicile facture 10€ à 25€ de plus qu'en salon. Il se déplace avec son matériel et propose les mêmes prestations. Souvent disponible en soirée et week-end.",
+      },
+    ],
+  },
+  {
+    slug: "barbier",
+    nom: "Barbier",
+    categorie: "beaute",
+    description:
+      "Le barbier est spécialisé dans la taille de barbe, le rasage traditionnel à l'ancienne, les coupes homme et les soins du visage masculins. Il maîtrise les techniques classiques au coupe-chou.",
+    icon: "💈",
+    faq: [
+      {
+        question: "Combien coûte une séance chez le barbier ?",
+        reponse:
+          "Une taille de barbe coûte entre 15€ et 35€. Un rasage traditionnel complet varie de 25€ à 50€. Les formules coupe + barbe sont souvent à 40€-70€.",
+      },
+      {
+        question: "Barbier ou coiffeur : quelle différence ?",
+        reponse:
+          "Le barbier est spécialisé dans la barbe et le rasage traditionnel. Il maîtrise mieux le rasage au coupe-chou, les dégradés très courts et les soins masculins.",
+      },
+      {
+        question: "Faut-il prendre rendez-vous chez le barbier ?",
+        reponse:
+          "C'est fortement conseillé, surtout en fin de semaine. Les barbershops populaires sont souvent complets plusieurs jours à l'avance.",
+      },
+    ],
+  },
+  {
+    slug: "estheticienne",
+    nom: "Esthéticienne",
+    categorie: "beaute",
+    description:
+      "L'esthéticienne propose épilations, soins du visage, manucures, maquillage, modelages et soins du corps. Elle travaille en institut ou à domicile, avec des techniques classiques ou high-tech.",
+    icon: "✨",
+    faq: [
+      {
+        question: "Combien coûte un soin du visage ?",
+        reponse:
+          "Un soin du visage classique coûte entre 45€ et 80€. Un soin haut de gamme (anti-âge, oxygénant) varie de 80€ à 150€. Les forfaits 5 séances offrent une réduction.",
+      },
+      {
+        question: "Épilation : quelle technique choisir ?",
+        reponse:
+          "L'épilation à la cire est la plus économique (30-60€). La lumière pulsée permet une réduction durable (200-500€ par zone). Le laser est le plus efficace mais le plus cher.",
+      },
+      {
+        question: "Esthéticienne à domicile : tarifs ?",
+        reponse:
+          "À domicile, comptez +10€ à +20€ de frais de déplacement. Les prestations restent les mêmes. Beaucoup d'esthéticiennes sont auto-entrepreneurs et déductibles d'impôts (50%).",
+      },
+    ],
+  },
+  {
+    slug: "prothesiste-ongulaire",
+    nom: "Prothésiste ongulaire",
+    categorie: "beaute",
+    description:
+      "La prothésiste ongulaire pose et entretient les ongles en gel, résine, vernis semi-permanent. Elle propose aussi des décorations nail art et des soins des mains et des pieds.",
+    icon: "💅",
+    faq: [
+      {
+        question: "Combien coûte une pose d'ongles ?",
+        reponse:
+          "Une pose gel ou résine coûte entre 35€ et 65€. Un remplissage varie de 25€ à 45€. Le vernis semi-permanent simple coûte 25€ à 40€. Comptez plus pour le nail art.",
+      },
+      {
+        question: "Combien de temps tiennent les ongles en gel ?",
+        reponse:
+          "Une pose gel tient 3 à 4 semaines. Le vernis semi-permanent tient 2 à 3 semaines. Prévoyez un remplissage régulier pour éviter d'abîmer l'ongle naturel.",
+      },
+      {
+        question: "La pose d'ongles abîme-t-elle les ongles ?",
+        reponse:
+          "Pas si la pose et la dépose sont faites par un professionnel qualifié. Une pause de quelques semaines tous les 6 mois est recommandée pour laisser l'ongle respirer.",
+      },
+    ],
+  },
+  {
+    slug: "maquilleuse",
+    nom: "Maquilleuse professionnelle",
+    categorie: "beaute",
+    description:
+      "La maquilleuse professionnelle réalise les maquillages mariage, soirée, shooting photo, cinéma et défilés. Elle se déplace à domicile ou en studio et propose des essais.",
+    icon: "💄",
+    faq: [
+      {
+        question: "Combien coûte un maquillage de mariage ?",
+        reponse:
+          "Un maquillage de mariée coûte entre 80€ et 180€, essai compris. Pour la mariée + témoins, comptez 200€ à 400€. Le déplacement à domicile le jour J est en supplément.",
+      },
+      {
+        question: "Quand faire l'essai maquillage mariage ?",
+        reponse:
+          "L'essai maquillage se fait 1 à 2 mois avant le mariage, idéalement avec l'essai coiffure. Cela permet d'ajuster le rendu en photos.",
+      },
+      {
+        question: "Maquillage longue tenue : combien de temps ?",
+        reponse:
+          "Un maquillage pro avec primer et fixateur tient 10 à 16 heures. Les techniques airbrush ou HD sont les plus résistantes pour les mariages et tournages.",
+      },
+    ],
+  },
+  {
+    slug: "tatoueur",
+    nom: "Tatoueur",
+    categorie: "beaute",
+    description:
+      "Le tatoueur réalise des tatouages permanents personnalisés, du flash design au projet sur mesure (réalisme, graphique, traditionnel, japonais, fine line). Il prodigue aussi les conseils de cicatrisation.",
+    icon: "🎨",
+    faq: [
+      {
+        question: "Combien coûte un tatouage ?",
+        reponse:
+          "Un petit tatouage coûte entre 60€ et 150€ (minimum boutique). Une pièce moyenne va de 200€ à 800€. Les grandes pièces réalistes peuvent dépasser 2 000€. Tarif horaire : 80-200€.",
+      },
+      {
+        question: "Comment choisir son tatoueur ?",
+        reponse:
+          "Regardez le portfolio (Instagram), vérifiez l'hygiène du studio (aiguilles à usage unique, déclaration ARS), demandez des références. Le feeling avec l'artiste est essentiel.",
+      },
+      {
+        question: "Comment soigner un tatouage frais ?",
+        reponse:
+          "Gardez le film 2-4h, lavez doucement, appliquez une crème cicatrisante 2 fois/jour pendant 2 semaines. Évitez soleil, piscine et bains pendant 1 mois.",
+      },
+    ],
+  },
+
+  // === AUTO / MOTO (NOUVEAUX) ===
+  {
+    slug: "garagiste",
+    nom: "Garagiste",
+    categorie: "auto",
+    description:
+      "Le garagiste entretient et répare les voitures : vidange, freinage, distribution, embrayage, diagnostic électronique. Il propose aussi le contrôle technique de pré-CT.",
+    icon: "🔧",
+    faq: [
+      {
+        question: "Combien coûte une vidange voiture ?",
+        reponse:
+          "Une vidange standard coûte entre 70€ et 150€ (huile + filtre). Une vidange complète avec filtres air/habitacle varie de 120€ à 250€. Les voitures haut de gamme coûtent plus.",
+      },
+      {
+        question: "Garagiste indépendant ou concession ?",
+        reponse:
+          "Les garagistes indépendants sont 20 à 40% moins chers que les concessions. Ils peuvent intervenir sur tous types de véhicules. La garantie constructeur reste valide.",
+      },
+      {
+        question: "À quelle fréquence entretenir sa voiture ?",
+        reponse:
+          "Une révision tous les 15 000 km ou 1 an est recommandée. La distribution se change tous les 60 000 à 120 000 km selon le modèle. Les plaquettes de frein tous les 30-50 000 km.",
+      },
+    ],
+  },
+  {
+    slug: "carrossier",
+    nom: "Carrossier",
+    categorie: "auto",
+    description:
+      "Le carrossier répare les bosses, rayures et chocs sur la carrosserie. Il réalise aussi le débosselage sans peinture, le polissage et la peinture complète d'éléments.",
+    icon: "🚙",
+    faq: [
+      {
+        question: "Combien coûte une réparation de carrosserie ?",
+        reponse:
+          "Une petite rayure coûte 50€ à 200€. Une bosse avec peinture varie de 300€ à 800€ par élément. Un débosselage sans peinture (DSP) coûte 100€ à 400€.",
+      },
+      {
+        question: "Faut-il déclarer le sinistre à l'assurance ?",
+        reponse:
+          "Pour un dégât responsable, déclarez le sinistre dans les 5 jours. L'assurance peut prendre en charge tout ou partie selon votre franchise. Demandez 2 devis minimum.",
+      },
+      {
+        question: "Combien de temps pour réparer la carrosserie ?",
+        reponse:
+          "Une petite réparation prend 1 à 2 jours. Une intervention importante (changement d'élément + peinture) nécessite 3 à 7 jours, séchage compris.",
+      },
+    ],
+  },
+  {
+    slug: "depanneur-auto",
+    nom: "Dépanneur auto",
+    categorie: "auto",
+    description:
+      "Le dépanneur auto intervient en cas de panne sur la route ou à domicile : batterie à plat, crevaison, panne mécanique. Il propose aussi le remorquage vers un garage.",
+    icon: "🚨",
+    faq: [
+      {
+        question: "Combien coûte un dépannage auto ?",
+        reponse:
+          "Un dépannage sur place coûte entre 80€ et 200€ en heures ouvrées. Un remorquage local varie de 150€ à 350€. Le supplément nuit/week-end est de 50% à 100%.",
+      },
+      {
+        question: "Mon assurance prend-elle en charge le dépannage ?",
+        reponse:
+          "La garantie assistance de votre assurance auto couvre généralement les pannes au-delà de 50 km du domicile. Vérifiez votre contrat avant d'appeler un dépanneur.",
+      },
+      {
+        question: "Que faire en cas de panne sur autoroute ?",
+        reponse:
+          "Sur autoroute, vous devez obligatoirement appeler le 17 ou la borne orange. Le dépannage est confié au prestataire autoroutier agréé. Forfait fixe : 142,29€ en 2025.",
+      },
+    ],
+  },
+  {
+    slug: "controle-technique",
+    nom: "Contrôle technique",
+    categorie: "auto",
+    description:
+      "Le centre de contrôle technique vérifie l'état de votre véhicule selon les 133 points réglementaires. Indispensable tous les 2 ans pour les véhicules de plus de 4 ans.",
+    icon: "✅",
+    faq: [
+      {
+        question: "Combien coûte le contrôle technique ?",
+        reponse:
+          "Un contrôle technique coûte entre 70€ et 90€. La contre-visite (en cas de défauts majeurs) varie de 15€ à 30€. Les centres indépendants sont souvent moins chers que les enseignes.",
+      },
+      {
+        question: "Quand faire le contrôle technique ?",
+        reponse:
+          "Le premier CT se fait dans les 6 mois précédant le 4ème anniversaire du véhicule. Ensuite, tous les 2 ans. Pour une vente, le CT doit dater de moins de 6 mois.",
+      },
+      {
+        question: "Que faire en cas de contre-visite ?",
+        reponse:
+          "Vous avez 2 mois pour faire les réparations et repasser le CT (uniquement les points en défaut). Si dépassement, vous devez refaire un CT complet.",
+      },
+    ],
+  },
+  {
+    slug: "lavage-auto",
+    nom: "Lavage auto",
+    categorie: "auto",
+    description:
+      "Le centre de lavage auto propose lavage extérieur, nettoyage intérieur, lustrage, polissage, traitement céramique et detailing professionnel.",
+    icon: "💦",
+    faq: [
+      {
+        question: "Combien coûte un lavage auto complet ?",
+        reponse:
+          "Un lavage extérieur en station coûte 5€ à 15€. Un nettoyage intérieur + extérieur complet varie de 30€ à 80€. Un detailing pro complet peut dépasser 200€.",
+      },
+      {
+        question: "Lavage à la main ou portique : que choisir ?",
+        reponse:
+          "Le lavage à la main est plus doux pour la peinture mais plus cher (40€-100€). Le portique est rapide et économique (8€-15€) mais peut micro-rayer la carrosserie.",
+      },
+      {
+        question: "À quelle fréquence laver sa voiture ?",
+        reponse:
+          "Un lavage par mois est idéal pour préserver la carrosserie. En hiver, lavez après chaque exposition au sel routier. Évitez les lavages au soleil direct.",
+      },
+    ],
+  },
+
+  // === ANIMAUX (NOUVEAUX) ===
+  {
+    slug: "veterinaire",
+    nom: "Vétérinaire",
+    categorie: "animaux",
+    description:
+      "Le vétérinaire soigne les animaux de compagnie et de ferme : consultations, vaccinations, stérilisations, chirurgies, radiologie. Il intervient aussi en urgence.",
+    icon: "🩺",
+    faq: [
+      {
+        question: "Combien coûte une consultation vétérinaire ?",
+        reponse:
+          "Une consultation standard coûte entre 35€ et 60€. Une vaccination complète varie de 70€ à 120€. Une stérilisation coûte 150€ à 400€ selon l'animal et la taille.",
+      },
+      {
+        question: "Comment trouver un vétérinaire de garde ?",
+        reponse:
+          "Composez le numéro de votre vétérinaire habituel, le répondeur indique le confrère de garde. Les grandes villes ont aussi des cliniques d'urgence 24h/24.",
+      },
+      {
+        question: "L'assurance animal vaut-elle le coup ?",
+        reponse:
+          "Pour un jeune animal, une mutuelle santé animale (10-40€/mois) peut être rentable en cas de maladie chronique ou d'accident. Comparez bien les franchises.",
+      },
+    ],
+  },
+  {
+    slug: "toiletteur",
+    nom: "Toiletteur",
+    categorie: "animaux",
+    description:
+      "Le toiletteur lave, démêle, tond et coupe les poils de votre chien ou chat. Il propose aussi le soin des griffes, des oreilles et des dents pour un entretien complet.",
+    icon: "✂️",
+    faq: [
+      {
+        question: "Combien coûte un toilettage chien ?",
+        reponse:
+          "Un toilettage complet petit chien coûte 35€ à 60€. Pour un grand chien à poils longs, comptez 60€ à 100€. Un simple bain varie de 20€ à 40€.",
+      },
+      {
+        question: "À quelle fréquence toiletter son chien ?",
+        reponse:
+          "Un chien à poils longs nécessite un toilettage toutes les 6-8 semaines. Pour les poils courts, 2 à 3 fois par an suffit. Le brossage hebdomadaire est essentiel.",
+      },
+      {
+        question: "Toiletteur à domicile : avantages ?",
+        reponse:
+          "Le toiletteur à domicile (camion équipé ou prestation chez vous) évite le stress du transport. Tarif +15 à +30€ par rapport au salon. Pratique pour les chiens âgés ou anxieux.",
+      },
+    ],
+  },
+  {
+    slug: "comportementaliste",
+    nom: "Comportementaliste animalier",
+    categorie: "animaux",
+    description:
+      "Le comportementaliste animalier intervient sur les troubles du comportement : aboiements, agressivité, anxiété, malpropreté. Il propose un suivi adapté avec les méthodes positives.",
+    icon: "🐕",
+    faq: [
+      {
+        question: "Combien coûte un comportementaliste ?",
+        reponse:
+          "Une consultation comportementaliste coûte entre 80€ et 150€ pour un bilan complet. Les séances de suivi varient de 50€ à 80€. À domicile : +20€ à 40€ de déplacement.",
+      },
+      {
+        question: "Éducateur ou comportementaliste : différence ?",
+        reponse:
+          "L'éducateur canin apprend les ordres de base (assis, rappel). Le comportementaliste traite les troubles du comportement (peur, agressivité, anxiété de séparation).",
+      },
+      {
+        question: "Quand consulter un comportementaliste ?",
+        reponse:
+          "Dès que votre animal présente un comportement gênant ou inhabituel : aboiements excessifs, agressivité, malpropreté soudaine, destructions. Plus on intervient tôt, mieux c'est.",
+      },
+    ],
+  },
+  {
+    slug: "pet-sitter",
+    nom: "Pet-sitter",
+    categorie: "animaux",
+    description:
+      "Le pet-sitter garde votre animal pendant vos absences : visites à domicile, garde chez lui ou promenades. Alternative économique et personnalisée à la pension.",
+    icon: "🐾",
+    faq: [
+      {
+        question: "Combien coûte un pet-sitter ?",
+        reponse:
+          "Une visite à domicile coûte 12€ à 20€. Une garde de jour 25€ à 40€. Une garde de nuit chez le pet-sitter 18€ à 35€. Une promenade 12€ à 20€.",
+      },
+      {
+        question: "Pet-sitter ou pension : que choisir ?",
+        reponse:
+          "Le pet-sitter (à domicile) maintient l'environnement habituel de l'animal, idéal pour les chats et chiens stressés. La pension convient aux chiens sociables qui aiment compagnie.",
+      },
+      {
+        question: "Comment choisir un pet-sitter de confiance ?",
+        reponse:
+          "Privilégiez les plateformes type Animaute, Yoopies, Holidog avec avis vérifiés. Faites une visite d'essai avant le départ. Demandez une copie d'assurance responsabilité civile.",
       },
     ],
   },

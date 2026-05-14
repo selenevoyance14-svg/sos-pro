@@ -7,7 +7,7 @@ import SearchBar from "@/components/SearchBar";
 export const metadata: Metadata = {
   title: "SOS-Pro.fr — Trouvez un professionnel près de chez vous",
   description:
-    "Annuaire de professionnels en France : thérapeutes, artisans, services. Trouvez rapidement un ostéopathe, plombier, électricien, photographe dans votre ville.",
+    "Guide pratique des professionnels en France : tarifs, conseils, comparatifs. Trouvez rapidement un ostéopathe, plombier, coiffeur, garagiste ou vétérinaire dans votre ville.",
 };
 
 export default function HomePage() {
@@ -112,27 +112,30 @@ export default function HomePage() {
       <section className="bg-gray-50 py-12 px-4">
         <div className="max-w-3xl mx-auto prose prose-gray">
           <h2 className="text-xl font-bold text-gray-900">
-            SOS-Pro.fr, votre annuaire de professionnels en France
+            SOS-Pro.fr, votre guide pratique des professionnels en France
           </h2>
           <p>
             Vous cherchez un <strong>ostéopathe</strong>, un{" "}
-            <strong>plombier</strong>, un <strong>photographe</strong> ou un{" "}
-            <strong>coach sportif</strong> dans votre ville ? SOS-Pro.fr
-            référence des milliers de professionnels partout en France pour vous
-            aider à trouver le bon interlocuteur rapidement.
+            <strong>plombier</strong>, un <strong>coiffeur</strong>, un{" "}
+            <strong>garagiste</strong> ou un <strong>vétérinaire</strong> dans
+            votre ville ? SOS-Pro.fr vous propose un guide complet par métier et
+            par ville pour comparer les tarifs, bien choisir votre professionnel
+            et trouver le bon matériel.
           </p>
           <p>
-            Notre annuaire couvre de nombreux domaines : <strong>bien-être
-            et santé</strong> (ostéopathes, sophrologues, naturopathes,
-            hypnothérapeutes), <strong>artisans du bâtiment</strong>{" "}
-            (plombiers, électriciens, serruriers, peintres, couvreurs) et{" "}
-            <strong>services</strong> (photographes, coachs sportifs,
-            professeurs particuliers, jardiniers).
+            Notre guide couvre de nombreux domaines : <strong>bien-être
+            et santé</strong> (ostéopathes, sophrologues, naturopathes),{" "}
+            <strong>artisans du bâtiment</strong> (plombiers, électriciens,
+            chauffagistes, vitriers, ramoneurs), <strong>services</strong>{" "}
+            (photographes, coachs, jardiniers), <strong>beauté</strong>{" "}
+            (coiffeurs, barbiers, esthéticiennes, tatoueurs),{" "}
+            <strong>automobile</strong> (garagistes, carrossiers, dépanneurs)
+            et <strong>animaux</strong> (vétérinaires, toiletteurs, pet-sitters).
           </p>
           <p>
-            Chaque fiche professionnelle vous donne les informations
-            essentielles : tarifs indicatifs, spécialités, questions fréquentes
-            et professionnels recommandés dans votre ville.
+            Chaque page vous donne les informations essentielles : tarifs
+            indicatifs adaptés à votre ville, conseils pour bien choisir,
+            questions fréquentes, numéros utiles et matériel recommandé.
           </p>
         </div>
       </section>

@@ -16,8 +16,8 @@ export async function generateMetadata({
   const categorie = categories.find((c) => c.slug === params.slug);
   if (!categorie) return {};
   return {
-    title: `${categorie.nom} — Annuaire de professionnels | SOS-Pro.fr`,
-    description: `Trouvez un professionnel ${categorie.nom.toLowerCase()} près de chez vous. Consultez notre annuaire et prenez rendez-vous rapidement.`,
+    title: `${categorie.nom} — Guide pratique des professionnels | SOS-Pro.fr`,
+    description: `Tarifs, conseils et matériel recommandé pour les professionnels ${categorie.nom.toLowerCase()} près de chez vous. Comparez et choisissez en toute confiance.`,
   };
 }
 

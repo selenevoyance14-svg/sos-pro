@@ -14,9 +14,8 @@ export default function ContactPage() {
       </h1>
       <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-8">
         <p className="text-gray-700 mb-6">
-          Vous êtes un professionnel et souhaitez apparaître dans notre
-          annuaire ? Vous avez une question ou une suggestion ? Contactez-nous
-          par email :
+          Une question, une suggestion, un signalement ou un partenariat ?
+          Contactez-nous par email :
         </p>
         <a
           href="mailto:bonsplansmania@gmail.com"

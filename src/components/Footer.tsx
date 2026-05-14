@@ -11,8 +11,8 @@ export default function Footer() {
               SOS<span className="text-yellow-400">Pro</span>.fr
             </h3>
             <p className="text-sm">
-              Trouvez rapidement un professionnel de confiance près de chez vous.
-              Annuaire gratuit de professionnels en France.
+              Guide pratique des professionnels en France : tarifs, conseils
+              et matériel recommandé pour bien choisir.
             </p>
           </div>
           <div>

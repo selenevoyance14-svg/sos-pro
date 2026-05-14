@@ -12,6 +12,7 @@ import {
   quandConsulter,
 } from "@/data/content";
 import { numerosUrgence, liensUtiles } from "@/data/numeros-utiles";
+import { produitsParMetier, getAmazonLink } from "@/data/produits-amazon";
 
 export const dynamicParams = false;
 
@@ -103,8 +104,12 @@ export default function MetierVillePage({
   const motifs = quandConsulter[metier.slug] ?? [];
   const numeros = numerosUrgence[metier.categorie] ?? [];
   const liens = liensUtiles[metier.slug] ?? [];
+  const produits = produitsParMetier[metier.slug] ?? [];
   const nomLower = metier.nom.toLowerCase();
   const annee = new Date().getFullYear();
+  const googleMapsUrl = `https://www.google.com/maps/search/${encodeURIComponent(
+    `${metier.nom} ${ville.nom}`
+  )}`;
 
   return (
     <>
@@ -206,24 +211,71 @@ export default function MetierVillePage({
         </section>
       )}
 
-      {/* CTA inscription */}
+      {/* CTA Google Maps : trouver un pro */}
       <section className="max-w-4xl mx-auto px-4 py-4">
-        <div className="bg-yellow-50 border border-yellow-200 rounded-xl p-6 text-center">
+        <div className="bg-gradient-to-br from-red-50 to-orange-50 border border-red-200 rounded-xl p-6 text-center">
           <h3 className="text-lg font-bold text-gray-900 mb-2">
-            Vous êtes {nomLower} à {ville.nom} ?
+            Trouver un {nomLower} à {ville.nom}
           </h3>
           <p className="text-gray-600 mb-4">
-            Inscrivez-vous gratuitement pour apparaître dans notre annuaire
-            et recevoir des demandes de clients à {ville.nom} et alentours.
+            Consultez la carte des {nomLower}s à {ville.nom} avec les avis, horaires et coordonnées sur Google Maps.
           </p>
-          <Link
-            href="/contact"
-            className="inline-block px-6 py-3 bg-red-600 hover:bg-red-700 text-white font-bold rounded-lg transition-colors"
+          <a
+            href={googleMapsUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-red-600 hover:bg-red-700 text-white font-bold rounded-lg transition-colors"
           >
-            Inscrire mon cabinet gratuitement
-          </Link>
+            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+            </svg>
+            Voir les {nomLower}s sur Google Maps
+          </a>
         </div>
       </section>
+
+      {/* Matériel recommandé Amazon */}
+      {produits.length > 0 && (
+        <section className="max-w-4xl mx-auto px-4 py-6">
+          <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+            <h2 className="text-xl font-bold text-gray-900 mb-2">
+              Matériel et produits recommandés pour {nomLower}
+            </h2>
+            <p className="text-sm text-gray-500 mb-5">
+              Notre sélection de produits utiles, que vous fassiez appel à un {nomLower} à {ville.nom} ou que vous souhaitiez réaliser certaines opérations vous-même.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              {produits.map((p, i) => (
+                <a
+                  key={i}
+                  href={getAmazonLink(p.recherche)}
+                  target="_blank"
+                  rel="noopener noreferrer sponsored"
+                  className="flex items-start gap-3 p-3 border border-gray-200 rounded-lg hover:border-orange-400 hover:bg-orange-50 transition-all group"
+                >
+                  <div className="flex-shrink-0 w-10 h-10 bg-orange-100 group-hover:bg-orange-200 rounded-lg flex items-center justify-center text-lg">
+                    🛒
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <div className="font-semibold text-gray-900 text-sm group-hover:text-orange-700">
+                      {p.nom}
+                    </div>
+                    <div className="text-xs text-gray-500 mt-0.5">
+                      {p.description}
+                    </div>
+                    <div className="text-xs text-orange-600 font-medium mt-1">
+                      Voir sur Amazon →
+                    </div>
+                  </div>
+                </a>
+              ))}
+            </div>
+            <p className="text-xs text-gray-400 mt-4 italic">
+              En tant que Partenaire Amazon, nous réalisons un bénéfice sur les achats remplissant les conditions applicables. Cela ne change pas le prix pour vous.
+            </p>
+          </div>
+        </section>
+      )}
 
       {/* Quand consulter */}
       {motifs.length > 0 && (

@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     template: "%s | SOS-Pro.fr",
   },
   description:
-    "Annuaire de professionnels en France : thérapeutes, artisans, services. Trouvez rapidement un ostéopathe, plombier, électricien, photographe dans votre ville.",
+    "Guide pratique des professionnels en France : tarifs, conseils, comparatifs. Trouvez rapidement un ostéopathe, plombier, coiffeur, garagiste ou vétérinaire dans votre ville.",
   metadataBase: new URL("https://sos-pro.fr"),
 };
 
