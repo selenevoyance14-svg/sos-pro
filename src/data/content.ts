@@ -271,6 +271,56 @@ export const tarifsDetailles: Record<
     { prestation: "Promenade chien", prixMin: 12, prixMax: 20, unite: "30 min" },
     { prestation: "Garde longue durée (vacances)", prixMin: 15, prixMax: 30, unite: "jour" },
   ],
+  // === URGENCES ===
+  "plombier-urgence": [
+    { prestation: "Déplacement seul (jour)", prixMin: 60, prixMax: 120, unite: "déplacement" },
+    { prestation: "Fuite d'eau jour", prixMin: 150, prixMax: 300, unite: "intervention" },
+    { prestation: "Fuite d'eau nuit/WE", prixMin: 250, prixMax: 500, unite: "intervention" },
+    { prestation: "Débouchage canalisation urgence", prixMin: 180, prixMax: 400, unite: "intervention" },
+    { prestation: "Tarif horaire urgence", prixMin: 80, prixMax: 150, unite: "heure HT" },
+  ],
+  "serrurier-urgence": [
+    { prestation: "Ouverture porte simple (jour)", prixMin: 80, prixMax: 200, unite: "intervention" },
+    { prestation: "Ouverture porte (nuit/WE)", prixMin: 150, prixMax: 400, unite: "intervention" },
+    { prestation: "Ouverture serrure blindée", prixMin: 200, prixMax: 500, unite: "intervention" },
+    { prestation: "Changement serrure après effraction", prixMin: 200, prixMax: 600, unite: "fourniture + pose" },
+    { prestation: "Mise en sécurité provisoire", prixMin: 100, prixMax: 250, unite: "intervention" },
+  ],
+  "electricien-urgence": [
+    { prestation: "Dépannage électrique (jour)", prixMin: 150, prixMax: 300, unite: "intervention" },
+    { prestation: "Dépannage nuit/week-end", prixMin: 200, prixMax: 450, unite: "intervention" },
+    { prestation: "Court-circuit / coupure générale", prixMin: 180, prixMax: 400, unite: "intervention" },
+    { prestation: "Remplacement disjoncteur en urgence", prixMin: 120, prixMax: 300, unite: "fourniture + pose" },
+    { prestation: "Tarif horaire urgence", prixMin: 60, prixMax: 120, unite: "heure HT" },
+  ],
+  "depanneur-auto-urgence": [
+    { prestation: "Dépannage sur place (jour)", prixMin: 80, prixMax: 200, unite: "intervention" },
+    { prestation: "Dépannage nuit/week-end", prixMin: 150, prixMax: 350, unite: "intervention" },
+    { prestation: "Remorquage local (< 30km)", prixMin: 150, prixMax: 400, unite: "remorquage" },
+    { prestation: "Forfait autoroute réglementé", prixMin: 142, prixMax: 175, unite: "fixe 2025" },
+    { prestation: "Clés enfermées / dans le contact", prixMin: 80, prixMax: 200, unite: "intervention" },
+  ],
+  "vitrier-urgence": [
+    { prestation: "Pose panneau temporaire urgence", prixMin: 100, prixMax: 250, unite: "intervention" },
+    { prestation: "Remplacement vitre simple urgence", prixMin: 150, prixMax: 350, unite: "vitre" },
+    { prestation: "Remplacement double vitrage urgence", prixMin: 200, prixMax: 500, unite: "vitre" },
+    { prestation: "Intervention nuit/WE supplément", prixMin: 100, prixMax: 250, unite: "majoration" },
+    { prestation: "Déplacement seul", prixMin: 60, prixMax: 150, unite: "déplacement" },
+  ],
+  "chauffagiste-urgence": [
+    { prestation: "Dépannage chaudière (jour)", prixMin: 150, prixMax: 350, unite: "intervention" },
+    { prestation: "Dépannage chaudière (nuit/WE)", prixMin: 250, prixMax: 500, unite: "intervention" },
+    { prestation: "Remplacement pièce d'urgence", prixMin: 150, prixMax: 600, unite: "fourniture + pose" },
+    { prestation: "Détartrage / remise en route", prixMin: 120, prixMax: 300, unite: "intervention" },
+    { prestation: "Tarif horaire urgence", prixMin: 80, prixMax: 150, unite: "heure HT" },
+  ],
+  "veterinaire-urgence": [
+    { prestation: "Consultation urgence (jour)", prixMin: 80, prixMax: 150, unite: "consultation" },
+    { prestation: "Consultation urgence (nuit/WE)", prixMin: 100, prixMax: 200, unite: "consultation" },
+    { prestation: "Hospitalisation 24h", prixMin: 100, prixMax: 300, unite: "nuit" },
+    { prestation: "Chirurgie d'urgence", prixMin: 500, prixMax: 2000, unite: "intervention" },
+    { prestation: "Soins post-opératoires", prixMin: 50, prixMax: 200, unite: "jour" },
+  ],
 };
 
 // Conseils pour bien choisir par métier
@@ -545,6 +595,56 @@ export const conseilsChoix: Record<string, string[]> = {
     "Exigez des photos/vidéos quotidiennes pendant la garde.",
     "Établissez un contrat écrit : horaires visites, alimentation, contact véto en cas d'urgence.",
   ],
+  // === URGENCES — CONSEILS ANTI-ARNAQUE ===
+  "plombier-urgence": [
+    "EXIGEZ un devis ferme par téléphone AVANT que le plombier se déplace.",
+    "Vérifiez l'adresse physique du plombier sur Internet (Pages Jaunes, Google).",
+    "Refusez toute intervention si le tarif annoncé sur place diffère du devis téléphonique.",
+    "Coupez l'arrivée d'eau au compteur en attendant — limite les dégâts.",
+    "En cas d'arnaque caractérisée, portez plainte au commissariat et signalez à la DGCCRF.",
+  ],
+  "serrurier-urgence": [
+    "ATTENTION : la majorité des arnaques en France concernent les serruriers en urgence.",
+    "N'appelez JAMAIS le premier numéro affiché en haut de Google (souvent intermédiaires).",
+    "Préférez un serrurier recommandé par votre assurance habitation ou syndic.",
+    "Demandez un devis ferme : ouverture + remplacement éventuel séparés.",
+    "Refusez toute facture de plus de 300€ pour une simple ouverture de porte claquée.",
+  ],
+  "electricien-urgence": [
+    "Avant d'appeler : vérifiez si la coupure est générale en interrogeant ENEDIS au 09 72 67 50 + département.",
+    "Demandez un devis téléphonique ferme — refusez les 'on verra sur place'.",
+    "En cas d'odeur de brûlé : coupez le disjoncteur général ET appelez les pompiers (18) avant l'électricien.",
+    "Vérifiez la certification Qualifelec et l'assurance décennale.",
+    "Méfiez-vous des tarifs anormalement bas qui cachent des suppléments énormes.",
+  ],
+  "depanneur-auto-urgence": [
+    "APPELEZ D'ABORD l'assistance de votre assurance auto (numéro sur la carte verte).",
+    "Sur autoroute : OBLIGATION d'appeler le 17 ou la borne orange (jamais un dépanneur privé).",
+    "Refusez de signer un bon de prise en charge sans avoir vu le devis détaillé.",
+    "Mettez gilet jaune + triangle avant de sortir de la voiture (sécurité ET légal).",
+    "Photographiez le compteur, plaque et état du véhicule avant le remorquage.",
+  ],
+  "vitrier-urgence": [
+    "Sécurisez d'abord la zone (carton + scotch large) en attendant le vitrier.",
+    "Demandez un devis ferme : pose panneau provisoire + remplacement définitif séparés.",
+    "Vérifiez l'adresse physique du vitrier (méfiance envers les pubs Google Ads sans local).",
+    "Pour effraction : déposez plainte AVANT pour activer la garantie habitation.",
+    "Photographiez les dégâts (intérieur + extérieur) pour le dossier assurance.",
+  ],
+  "chauffagiste-urgence": [
+    "ODEUR DE GAZ = appelez le 0 800 47 33 33 (GRDF) AVANT le chauffagiste.",
+    "Vérifiez vous-même la pression chaudière (1-1,5 bars) et les voyants avant d'appeler.",
+    "Demandez un devis ferme avec le coût des pièces séparé de la main d'œuvre.",
+    "Privilégiez un chauffagiste RGE Qualibat ou Qualipac certifié.",
+    "Pour les contrats d'entretien annuels, la plupart incluent un dépannage prioritaire 24h/24.",
+  ],
+  "veterinaire-urgence": [
+    "Composez d'abord le numéro de votre vétérinaire habituel : le répondeur indique la garde.",
+    "Numéro intoxication animal (24h/24) : CAPAE Nantes 02 40 68 77 40 ou CNITV Lyon 04 78 87 10 40.",
+    "Préparez un descriptif clair (âge, race, poids, symptômes, produits ingérés) pour gagner du temps.",
+    "Apportez le carnet de santé et les traitements en cours.",
+    "Une mutuelle animale rembourse souvent les urgences (vérifiez votre contrat).",
+  ],
 };
 
 // Génère un coefficient de prix basé sur la taille de la ville
@@ -594,6 +694,8 @@ export function generateIntroText(metier: Metier, ville: Ville): string {
       `À ${v.nom}, le secteur automobile regroupe garagistes, carrossiers, dépanneurs, centres de contrôle technique et stations de lavage. Avec ${v.population.toLocaleString("fr-FR")} habitants et son réseau routier, la ville dispose d'une offre étoffée pour l'entretien et la réparation de votre véhicule. Comparez les tarifs et trouvez le professionnel adapté à votre besoin.`,
     animaux: (v) =>
       `${v.nom} (${v.codePostal}) propose de nombreux professionnels pour le bien-être de vos animaux de compagnie : vétérinaires, toiletteurs, comportementalistes et pet-sitters. Avec ${v.population.toLocaleString("fr-FR")} habitants, la demande est forte et l'offre variée. Découvrez les tarifs indicatifs, les bons réflexes pour choisir et les accessoires recommandés.`,
+    urgences: (v) =>
+      `Une urgence à ${v.nom} (${v.codePostal}) ? Découvrez les bons réflexes, les tarifs réels en heures ouvrées et en nuit/week-end, et surtout comment éviter les arnaques fréquentes lors des interventions en urgence. Avec ${v.population.toLocaleString("fr-FR")} habitants, ${v.nom} dispose de nombreux pros disponibles 24h/24, mais tous ne se valent pas. Voici notre guide pour intervenir en sécurité.`,
   };
 
   return texts[metier.categorie]?.(ville) ?? "";
@@ -957,5 +1059,70 @@ export const quandConsulter: Record<string, string[]> = {
     "Promenades quotidiennes pour chien (propriétaire âgé ou occupé)",
     "Hospitalisation du propriétaire",
     "Garde longue durée (déplacement professionnel)",
+  ],
+  // === URGENCES ===
+  "plombier-urgence": [
+    "Fuite d'eau importante (visible au compteur ou plafond qui s'effondre)",
+    "Dégât des eaux chez vous ou chez le voisin",
+    "Canalisation totalement bouchée (toilettes débordent)",
+    "Chauffe-eau qui fuit ou explose",
+    "Rupture de tuyauterie en plein hiver (gel)",
+    "Coupure d'eau soudaine sans raison apparente",
+    "Refoulement d'eaux usées dans la baignoire/douche",
+  ],
+  "serrurier-urgence": [
+    "Porte claquée avec clés à l'intérieur",
+    "Clé cassée dans la serrure",
+    "Clés perdues ou volées (changement urgent)",
+    "Cambriolage ou tentative d'effraction",
+    "Serrure bloquée (impossible d'ouvrir ou de fermer)",
+    "Mise en sécurité après mise à la porte d'un colocataire",
+    "Porte forcée par les pompiers ou la police",
+  ],
+  "electricien-urgence": [
+    "Coupure de courant générale dans le logement",
+    "Disjoncteur qui saute en permanence",
+    "Odeur de brûlé ou fumée sortant d'une prise/tableau",
+    "Prise ou interrupteur qui chauffe anormalement",
+    "Court-circuit suite à dégât des eaux",
+    "Tableau électrique qui claque ou disjoncte sans raison",
+    "Panne de courant après orage avec foudre",
+  ],
+  "depanneur-auto-urgence": [
+    "Voiture en panne sur la route ou autoroute",
+    "Batterie à plat sans câbles ni booster",
+    "Crevaison sans roue de secours",
+    "Accident léger sans blessé (remorquage)",
+    "Clés enfermées ou cassées dans la voiture",
+    "Erreur de carburant (essence dans diesel ou inverse)",
+    "Voiture qui refuse de démarrer le matin",
+  ],
+  "vitrier-urgence": [
+    "Bris de vitre suite à effraction (cambriolage)",
+    "Vitre cassée par tempête, grêle ou vent fort",
+    "Vitre éclatée par choc (ballon, vandalisme)",
+    "Vitrage feuilleté de sécurité endommagé",
+    "Bris de glace véranda ou puit de jour",
+    "Miroir cassé encastré (douche, dressing)",
+    "Vitrine commerce vandalisée la nuit",
+  ],
+  "chauffagiste-urgence": [
+    "Chaudière en panne en plein hiver",
+    "Plus d'eau chaude soudainement",
+    "Odeur de gaz (URGENCE ABSOLUE — appelez GRDF 0 800 47 33 33)",
+    "Radiateurs froids malgré chaudière allumée",
+    "Fuite d'eau au niveau de la chaudière",
+    "Voyant de panne / code erreur sur la chaudière",
+    "Chaudière qui claque, siffle ou fait du bruit anormal",
+  ],
+  "veterinaire-urgence": [
+    "Ingestion d'objet ou de produit toxique (chocolat, raisin, médicament)",
+    "Vomissements ou diarrhée répétés et incontrôlables",
+    "Animal renversé par une voiture",
+    "Difficulté respiratoire (halètement extrême, langue bleue)",
+    "Convulsions ou crise d'épilepsie",
+    "Plaie qui saigne abondamment",
+    "Abdomen gonflé et douloureux (suspicion de torsion)",
+    "Accouchement difficile (mise bas qui dure trop longtemps)",
   ],
 };

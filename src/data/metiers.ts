@@ -8,6 +8,7 @@ export interface Metier {
 }
 
 export const categories = [
+  { slug: "urgences", nom: "Urgences 24h/24", icon: "🚨" },
   { slug: "bien-etre", nom: "Bien-être & Santé", icon: "🧘" },
   { slug: "artisans", nom: "Artisans & Bâtiment", icon: "🔧" },
   { slug: "services", nom: "Services & Loisirs", icon: "📸" },
@@ -977,6 +978,183 @@ export const metiers: Metier[] = [
         question: "Comment choisir un pet-sitter de confiance ?",
         reponse:
           "Privilégiez les plateformes type Animaute, Yoopies, Holidog avec avis vérifiés. Faites une visite d'essai avant le départ. Demandez une copie d'assurance responsabilité civile.",
+      },
+    ],
+  },
+
+  // === URGENCES (NOUVEAU) ===
+  {
+    slug: "plombier-urgence",
+    nom: "Plombier urgence 24h/24",
+    categorie: "urgences",
+    description:
+      "Le plombier d'urgence intervient 24h/24 et 7j/7 pour les fuites d'eau, dégâts des eaux, canalisations bouchées et chauffe-eau en panne. Délai d'intervention rapide pour limiter les dégâts.",
+    icon: "🚿",
+    faq: [
+      {
+        question: "Combien coûte un plombier en urgence ?",
+        reponse:
+          "Une intervention de plomberie en urgence coûte entre 150€ et 400€ selon l'horaire et la nature du problème. Le tarif est majoré de 50% à 100% la nuit, le week-end et les jours fériés.",
+      },
+      {
+        question: "Comment éviter les arnaques en urgence ?",
+        reponse:
+          "Demandez TOUJOURS un devis ferme par téléphone avant l'intervention. Refusez toute intervention si le tarif annoncé sur place est différent. Vérifiez l'adresse physique du plombier sur Internet.",
+      },
+      {
+        question: "Que faire en attendant le plombier ?",
+        reponse:
+          "Coupez l'arrivée d'eau au niveau du compteur ou de la vanne d'arrêt. Coupez l'électricité si l'eau approche d'une prise. Prenez des photos pour l'assurance avant tout déplacement.",
+      },
+    ],
+  },
+  {
+    slug: "serrurier-urgence",
+    nom: "Serrurier urgence 24h/24",
+    categorie: "urgences",
+    description:
+      "Le serrurier d'urgence intervient 24h/24 pour les ouvertures de porte claquée, clés perdues, serrures forcées après cambriolage et mise en sécurité immédiate du logement.",
+    icon: "🔓",
+    faq: [
+      {
+        question: "Combien coûte un serrurier en urgence ?",
+        reponse:
+          "Une ouverture de porte simple coûte entre 80€ et 200€ en journée, 150€ à 400€ la nuit/week-end. Méfiez-vous des tarifs anormalement bas qui cachent souvent des arnaques.",
+      },
+      {
+        question: "Comment reconnaître une arnaque de serrurier ?",
+        reponse:
+          "Tarif téléphonique flou, gonflement du devis sur place, prétexte que la serrure doit être 'cassée pour ouvrir', facturation de pièces non installées. Refusez et appelez la police au 17.",
+      },
+      {
+        question: "Que faire en cas de porte claquée ?",
+        reponse:
+          "Vérifiez d'abord si un voisin a un double. Contactez votre syndic ou propriétaire si vous êtes locataire. En dernier recours, appelez un serrurier recommandé (assurance, mairie).",
+      },
+    ],
+  },
+  {
+    slug: "electricien-urgence",
+    nom: "Électricien urgence 24h/24",
+    categorie: "urgences",
+    description:
+      "L'électricien d'urgence intervient 24h/24 en cas de coupure de courant générale, disjoncteur qui saute en permanence, fumée ou odeur de brûlé, prise qui claque ou court-circuit.",
+    icon: "⚡",
+    faq: [
+      {
+        question: "Combien coûte un électricien en urgence ?",
+        reponse:
+          "Une intervention en urgence coûte entre 150€ et 350€ selon l'horaire et le problème. Le déplacement seul peut atteindre 80€ à 150€. Majoration nuit/week-end de 50% à 100%.",
+      },
+      {
+        question: "Que faire en cas de coupure de courant ?",
+        reponse:
+          "Vérifiez si vos voisins sont aussi coupés (problème ENEDIS, appelez le 09 72 67 50 + département). Si seul votre logement est coupé, vérifiez le disjoncteur général et les différentiels.",
+      },
+      {
+        question: "Danger électrique : qui appeler ?",
+        reponse:
+          "Si odeur de brûlé, fumée ou flamme : coupez le disjoncteur général, appelez les pompiers au 18. Ne touchez à rien avec de l'eau. Une fois sécurisé, appelez un électricien d'urgence.",
+      },
+    ],
+  },
+  {
+    slug: "depanneur-auto-urgence",
+    nom: "Dépanneur auto urgence",
+    categorie: "urgences",
+    description:
+      "Le dépanneur automobile d'urgence intervient 24h/24 sur la route ou à domicile : panne mécanique, batterie à plat, crevaison, accident, clés enfermées. Remorquage vers un garage.",
+    icon: "🚗",
+    faq: [
+      {
+        question: "Combien coûte un dépannage auto en urgence ?",
+        reponse:
+          "Un dépannage de nuit/week-end coûte entre 150€ et 350€. Un remorquage local 150€ à 400€. Sur autoroute, tarif réglementé fixe : 142,29€ en 2025 (175€ poids lourds).",
+      },
+      {
+        question: "Mon assurance prend-elle en charge ?",
+        reponse:
+          "Appelez d'abord l'assistance de votre assurance auto. La plupart des contrats incluent une garantie assistance 24h/24, souvent gratuite au-delà de 50 km du domicile.",
+      },
+      {
+        question: "Panne sur autoroute : que faire ?",
+        reponse:
+          "OBLIGATOIRE : composez le 17 ou utilisez une borne orange (tous les 2 km). Le dépannage est confié au prestataire agréé du tronçon. Mettez gilet jaune et triangle.",
+      },
+    ],
+  },
+  {
+    slug: "vitrier-urgence",
+    nom: "Vitrier urgence 24h/24",
+    categorie: "urgences",
+    description:
+      "Le vitrier d'urgence intervient 24h/24 pour les bris de glace après tempête, effraction, vandalisme. Pose de panneau provisoire et remplacement définitif de la vitre.",
+    icon: "🪟",
+    faq: [
+      {
+        question: "Combien coûte un vitrier en urgence ?",
+        reponse:
+          "Une intervention en urgence avec pose de panneau temporaire coûte entre 150€ et 350€. Le remplacement définitif s'ajoute (150€ à 400€ selon la vitre). Majoration nuit/WE +50% à 100%.",
+      },
+      {
+        question: "Vitre cassée : que faire en attendant ?",
+        reponse:
+          "Sécurisez la zone (gants, balai), récupérez les éclats principaux. Posez un carton ou film plastique avec du gros scotch pour bloquer le vent/froid. Photographiez pour l'assurance.",
+      },
+      {
+        question: "Le vitrier est-il pris en charge par l'assurance ?",
+        reponse:
+          "Oui dans le cadre d'une effraction ou tempête (garantie habitation). Déclarez le sinistre dans les 5 jours (2 jours en cas de cambriolage avec plainte préalable).",
+      },
+    ],
+  },
+  {
+    slug: "chauffagiste-urgence",
+    nom: "Chauffagiste urgence",
+    categorie: "urgences",
+    description:
+      "Le chauffagiste d'urgence intervient 24h/24 sur les pannes de chaudière en hiver, fuites de gaz, radiateurs qui ne chauffent plus, eau chaude coupée. Sécurité et redémarrage rapide.",
+    icon: "🔥",
+    faq: [
+      {
+        question: "Combien coûte une intervention chauffagiste en urgence ?",
+        reponse:
+          "Un dépannage chaudière en urgence coûte entre 150€ et 400€ (déplacement + main d'œuvre). Les pièces sont en supplément. Majoration nuit/WE +50% à 100%.",
+      },
+      {
+        question: "Odeur de gaz : qui appeler ?",
+        reponse:
+          "URGENCE ABSOLUE : appelez immédiatement GRDF Sécurité Gaz au 0 800 47 33 33 (gratuit 24h/24). Aérez, ne touchez pas aux interrupteurs, évacuez. Le chauffagiste intervient ensuite.",
+      },
+      {
+        question: "Pas de chauffage en hiver : que faire ?",
+        reponse:
+          "Vérifiez la pression de la chaudière (1-1,5 bars), le thermostat, l'alimentation gaz/électricité. Si rien ne fonctionne et qu'il fait froid : contactez un chauffagiste d'urgence.",
+      },
+    ],
+  },
+  {
+    slug: "veterinaire-urgence",
+    nom: "Vétérinaire urgence 24h/24",
+    categorie: "urgences",
+    description:
+      "Le vétérinaire d'urgence intervient 24h/24 pour les accidents, intoxications, mises bas difficiles, douleurs aiguës et toutes les urgences vitales de vos animaux de compagnie.",
+    icon: "🩺",
+    faq: [
+      {
+        question: "Combien coûte une urgence vétérinaire ?",
+        reponse:
+          "Une consultation d'urgence coûte entre 80€ et 200€. Une hospitalisation 100€ à 300€/nuit. Une chirurgie d'urgence 500€ à 2000€+. La mutuelle animale peut couvrir une grande partie.",
+      },
+      {
+        question: "Quels sont les signes d'urgence vétérinaire ?",
+        reponse:
+          "Vomissements/diarrhée répétés, ne tient plus debout, respiration difficile, plaie qui saigne, ingestion d'objet/produit toxique, accouchement compliqué, abdomen gonflé, convulsions.",
+      },
+      {
+        question: "Comment trouver une clinique vétérinaire de garde ?",
+        reponse:
+          "Composez le numéro de votre vétérinaire habituel — le répondeur indique le confrère de garde. Les grandes villes ont des cliniques 24h/24 (VetUp, ChvetX, Veteo).",
       },
     ],
   },

@@ -42,6 +42,16 @@ export const numerosUrgence: Record<
     { nom: "I-CAD identification", numero: "09 77 40 30 77", description: "Animal perdu/trouvé (puce)" },
     { nom: "SPA - Centre national", numero: "01 43 80 40 66", description: "Maltraitance ou signalement" },
   ],
+  urgences: [
+    { nom: "SAMU", numero: "15", description: "Urgences médicales graves" },
+    { nom: "Pompiers", numero: "18", description: "Incendie, accident, sauvetage" },
+    { nom: "Police / Gendarmerie", numero: "17", description: "Police secours" },
+    { nom: "Urgences européen", numero: "112", description: "Numéro unique toutes urgences" },
+    { nom: "GRDF Sécurité Gaz", numero: "0 800 47 33 33", description: "Fuite de gaz — appel gratuit 24h/24" },
+    { nom: "ENEDIS Dépannage", numero: "09 72 67 50 + dépt", description: "Coupure de courant ENEDIS" },
+    { nom: "Sourds et malentendants", numero: "114", description: "Numéro d'urgence par SMS/Fax/Tchat" },
+    { nom: "DGCCRF (arnaques)", numero: "0 809 540 550", description: "Signaler une arnaque urgence" },
+  ],
 };
 
 // Liens pratiques par type de métier

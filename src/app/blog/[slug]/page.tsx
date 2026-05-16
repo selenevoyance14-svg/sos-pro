@@ -9,6 +9,7 @@ import {
 } from "@/data/articles";
 import { getMetierBySlug } from "@/data/metiers";
 import { villes } from "@/data/villes";
+import { getAmazonLink } from "@/data/produits-amazon";
 
 export const dynamicParams = false;
 
@@ -96,6 +97,48 @@ function renderSection(s: Section, i: number) {
           >
             {s.text} →
           </Link>
+        </div>
+      );
+    case "amazon":
+      return (
+        <div
+          key={i}
+          className="my-8 bg-gradient-to-br from-orange-50 to-amber-50 border border-orange-200 rounded-xl p-6"
+        >
+          {s.titre && (
+            <h3 className="text-lg font-bold text-gray-900 mb-4">
+              {s.titre}
+            </h3>
+          )}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            {s.produits.map((p, j) => (
+              <a
+                key={j}
+                href={getAmazonLink(p.recherche)}
+                target="_blank"
+                rel="noopener noreferrer sponsored"
+                className="flex items-start gap-3 p-3 bg-white border border-orange-200 rounded-lg hover:border-orange-400 hover:shadow-md transition-all group"
+              >
+                <div className="flex-shrink-0 w-10 h-10 bg-orange-100 group-hover:bg-orange-200 rounded-lg flex items-center justify-center text-lg">
+                  🛒
+                </div>
+                <div className="flex-1 min-w-0">
+                  <div className="font-semibold text-gray-900 text-sm group-hover:text-orange-700">
+                    {p.nom}
+                  </div>
+                  <div className="text-xs text-gray-600 mt-0.5">
+                    {p.description}
+                  </div>
+                  <div className="text-xs text-orange-600 font-medium mt-1">
+                    Voir sur Amazon →
+                  </div>
+                </div>
+              </a>
+            ))}
+          </div>
+          <p className="text-xs text-gray-500 mt-3 italic">
+            En tant que Partenaire Amazon, nous réalisons un bénéfice sur les achats remplissant les conditions applicables.
+          </p>
         </div>
       );
   }
