@@ -1,3 +1,5 @@
+import { articlesBatch2 } from "./articles-batch2";
+
 export type Section =
   | { type: "p"; text: string }
   | { type: "h2"; text: string }
@@ -4378,6 +4380,9 @@ export const articles: Article[] = [
     ],
   },
 ];
+
+// Merge du 2e lot d'articles (batch2) — cible metiers sous-representes
+articles.push(...articlesBatch2);
 
 export function getArticleBySlug(slug: string): Article | undefined {
   return articles.find((a) => a.slug === slug);
