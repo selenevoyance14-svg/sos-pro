@@ -9,15 +9,9 @@ export interface Metier {
 
 export const categories = [
   { slug: "urgences", nom: "Urgences 24h/24", icon: "🚨" },
-  { slug: "bien-etre", nom: "Bien-être & Santé", icon: "🧘" },
-  { slug: "artisans", nom: "Artisans & Bâtiment", icon: "🔧" },
-  { slug: "services", nom: "Services & Loisirs", icon: "📸" },
-  { slug: "beaute", nom: "Beauté & Coiffure", icon: "💅" },
-  { slug: "auto", nom: "Auto & Moto", icon: "🚗" },
-  { slug: "animaux", nom: "Animaux", icon: "🐾" },
 ];
 
-export const metiers: Metier[] = [
+const metiersCatalog: Metier[] = [
   // === BIEN-ÊTRE ===
   {
     slug: "osteopathe",
@@ -1159,6 +1153,10 @@ export const metiers: Metier[] = [
     ],
   },
 ];
+
+export const metiers = metiersCatalog.filter(
+  (metier) => metier.categorie === "urgences"
+);
 
 export function getMetierBySlug(slug: string): Metier | undefined {
   return metiers.find((m) => m.slug === slug);

@@ -20,7 +20,7 @@ export type Article = {
   sections: Section[];
 };
 
-export const articles: Article[] = [
+const articleCatalog: Article[] = [
   {
     slug: "comment-choisir-osteopathe",
     title: "Comment choisir un bon ostéopathe : 7 critères à vérifier",
@@ -4382,7 +4382,16 @@ export const articles: Article[] = [
 ];
 
 // Merge du 2e lot d'articles (batch2) — cible metiers sous-representes
-articles.push(...articlesBatch2);
+articleCatalog.push(...articlesBatch2);
+
+const emergencyArticlePattern =
+  /(urgence|fuite|panne|serrure|porte bloquée|effraction|disjoncteur|chauffage|chaudière|vitre cassée|batterie|pneu crevé|intoxication|vétérinaire de garde)/i;
+
+export const articles = articleCatalog.filter((article) =>
+  emergencyArticlePattern.test(
+    `${article.title} ${article.description} ${article.intro}`
+  )
+);
 
 export function getArticleBySlug(slug: string): Article | undefined {
   return articles.find((a) => a.slug === slug);

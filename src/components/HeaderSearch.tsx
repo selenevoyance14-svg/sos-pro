@@ -3,7 +3,6 @@
 import { useState, useRef, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { metiers } from "@/data/metiers";
-import { villes } from "@/data/villes";
 
 export default function HeaderSearch() {
   const router = useRouter();
@@ -24,16 +23,12 @@ export default function HeaderSearch() {
 
   const q = query.toLowerCase().trim();
 
-  // Recherche dans les métiers et villes
+  // Recherche dans les guides d'urgence
   const matchedMetiers = q.length >= 2
     ? metiers.filter((m) => m.nom.toLowerCase().includes(q)).slice(0, 4)
     : [];
 
-  const matchedVilles = q.length >= 2
-    ? villes.filter((v) => v.nom.toLowerCase().includes(q)).slice(0, 4)
-    : [];
-
-  const hasResults = matchedMetiers.length > 0 || matchedVilles.length > 0;
+  const hasResults = matchedMetiers.length > 0;
 
   function navigate(url: string) {
     setQuery("");
@@ -86,23 +81,6 @@ export default function HeaderSearch() {
                 >
                   <span>{m.icon}</span>
                   <span>{m.nom}</span>
-                </button>
-              ))}
-            </div>
-          )}
-          {matchedVilles.length > 0 && (
-            <div>
-              <div className="px-3 py-2 text-xs font-semibold text-gray-400 uppercase bg-gray-50">
-                Villes
-              </div>
-              {matchedVilles.map((v) => (
-                <button
-                  key={v.slug}
-                  onClick={() => navigate(`/osteopathe/${v.slug}`)}
-                  className="w-full text-left px-3 py-2 text-sm text-gray-800 hover:bg-red-50 hover:text-red-600 flex items-center gap-2"
-                >
-                  <span>📍</span>
-                  <span>{v.nom} ({v.departement})</span>
                 </button>
               ))}
             </div>

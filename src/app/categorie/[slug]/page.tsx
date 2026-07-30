@@ -1,105 +1,73 @@
+import type { Metadata } from "next";
 import Link from "next/link";
-import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { categories, getMetiersByCategorie } from "@/data/metiers";
-import { villes } from "@/data/villes";
 
-export async function generateStaticParams() {
-  return categories.map((c) => ({ slug: c.slug }));
+export function generateStaticParams() {
+  return categories.map((category) => ({ slug: category.slug }));
 }
 
-export async function generateMetadata({
+export function generateMetadata({
   params,
 }: {
   params: { slug: string };
-}): Promise<Metadata> {
-  const categorie = categories.find((c) => c.slug === params.slug);
-  if (!categorie) return {};
+}): Metadata {
+  const category = categories.find((item) => item.slug === params.slug);
+  if (!category) return {};
   return {
-    title: `${categorie.nom} — Guide pratique des professionnels | SOS-Pro.fr`,
-    description: `Tarifs, conseils et matériel recommandé pour les professionnels ${categorie.nom.toLowerCase()} près de chez vous. Comparez et choisissez en toute confiance.`,
+    title: "Urgences 24h/24 : premiers gestes, tarifs et numéros",
+    description:
+      "Fuite, serrurerie, électricité, chauffage, vitre, automobile ou animal : que faire immédiatement et comment éviter les dépannages abusifs.",
+    alternates: { canonical: `/categorie/${category.slug}/` },
   };
 }
 
-export default function CategoriePage({
+export default function CategoryPage({
   params,
 }: {
   params: { slug: string };
 }) {
-  const categorie = categories.find((c) => c.slug === params.slug);
-  if (!categorie) notFound();
-
-  const catMetiers = getMetiersByCategorie(categorie.slug);
-  const topVilles = villes.slice(0, 8);
+  const category = categories.find((item) => item.slug === params.slug);
+  if (!category) notFound();
+  const guides = getMetiersByCategorie(category.slug);
 
   return (
     <>
-      <section className="bg-gradient-to-br from-red-600 to-red-800 text-white py-12 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="text-5xl mb-4">{categorie.icon}</div>
-          <h1 className="text-3xl md:text-4xl font-extrabold mb-3">
-            {categorie.nom}
+      <section className="bg-slate-950 px-4 py-16 text-white">
+        <div className="mx-auto max-w-5xl">
+          <p className="text-sm font-bold uppercase tracking-widest text-red-400">
+            SOS-Pro
+          </p>
+          <h1 className="mt-3 text-4xl font-black md:text-5xl">
+            Guides d’urgences 24h/24
           </h1>
-          <p className="text-lg opacity-90">
-            Trouvez votre professionnel {categorie.nom.toLowerCase()} en
-            France
+          <p className="mt-5 max-w-2xl text-lg leading-relaxed text-slate-300">
+            Sécuriser la situation, appeler le bon service, préparer le devis et
+            reconnaître les pratiques abusives.
           </p>
         </div>
       </section>
 
-      <section className="max-w-6xl mx-auto px-4 py-12">
-        <h2 className="text-2xl font-bold text-gray-900 mb-8">
-          Nos professionnels {categorie.nom.toLowerCase()}
-        </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-          {catMetiers.map((m) => (
+      <section className="mx-auto max-w-6xl px-4 py-16">
+        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          {guides.map((guide) => (
             <Link
-              key={m.slug}
-              href={`/${m.slug}`}
-              className="bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow p-6 border border-gray-100"
+              key={guide.slug}
+              href={`/${guide.slug}/`}
+              className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-red-300 hover:shadow-lg"
             >
-              <div className="text-3xl mb-3">{m.icon}</div>
-              <h3 className="text-lg font-bold text-gray-900 mb-2">
-                {m.nom}
-              </h3>
-              <p className="text-sm text-gray-600 line-clamp-3">
-                {m.description}
+              <span className="text-4xl">{guide.icon}</span>
+              <h2 className="mt-4 text-xl font-black text-slate-950">
+                {guide.nom}
+              </h2>
+              <p className="mt-3 line-clamp-4 text-sm leading-relaxed text-slate-600">
+                {guide.description}
               </p>
-              <div className="mt-4 flex flex-wrap gap-1">
-                {topVilles.slice(0, 4).map((v) => (
-                  <Link
-                    key={v.slug}
-                    href={`/${m.slug}/${v.slug}`}
-                    className="text-xs px-2 py-1 bg-gray-100 hover:bg-red-50 hover:text-red-600 rounded-full transition-colors"
-                  >
-                    {v.nom}
-                  </Link>
-                ))}
-              </div>
+              <span className="mt-5 inline-block text-sm font-bold text-red-600">
+                Premiers réflexes et tarifs →
+              </span>
             </Link>
           ))}
-        </div>
-      </section>
-
-      {/* Autres catégories */}
-      <section className="bg-gray-50 py-12 px-4">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-xl font-bold text-gray-900 mb-4">
-            Autres catégories
-          </h2>
-          <div className="flex flex-wrap gap-3">
-            {categories
-              .filter((c) => c.slug !== categorie.slug)
-              .map((c) => (
-                <Link
-                  key={c.slug}
-                  href={`/categorie/${c.slug}`}
-                  className="px-4 py-2 bg-white hover:bg-red-50 hover:text-red-600 border border-gray-200 rounded-lg transition-colors"
-                >
-                  {c.icon} {c.nom}
-                </Link>
-              ))}
-          </div>
         </div>
       </section>
     </>

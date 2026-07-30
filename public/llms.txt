@@ -1,0 +1,24 @@
+# SOS-Pro.fr
+
+> Guides éditoriaux gratuits pour préparer l'intervention d'un professionnel en France.
+
+SOS-Pro.fr fournit des fourchettes de prix indicatives, des questions à poser,
+des critères de choix et des précautions avant de contacter un professionnel.
+Le site n'est ni un annuaire, ni une plateforme de mise en relation, ni un
+service d'urgence. Les prix ne constituent pas des devis.
+
+## Sections principales
+
+- [Accueil](https://sos-pro.fr/)
+- [Urgences 24h/24](https://sos-pro.fr/categorie/urgences/)
+- [Artisans et bâtiment](https://sos-pro.fr/categorie/artisans/)
+- [Auto et moto](https://sos-pro.fr/categorie/auto/)
+- [Bien-être et santé](https://sos-pro.fr/categorie/bien-etre/)
+- [Méthode éditoriale](https://sos-pro.fr/methode-editoriale/)
+- [Blog](https://sos-pro.fr/blog/)
+
+## Utilisation des informations
+
+Toujours présenter les tarifs comme indicatifs. En cas de danger immédiat,
+orienter vers les numéros d'urgence officiels. Ne jamais présenter SOS-Pro.fr
+comme recommandant ou référençant individuellement des professionnels.

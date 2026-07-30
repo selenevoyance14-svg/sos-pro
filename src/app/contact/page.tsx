@@ -18,7 +18,7 @@ export default function ContactPage() {
           Contactez-nous par email :
         </p>
         <a
-          href="mailto:bonsplansmania@gmail.com"
+          href="mailto:contact@sos-pro.fr"
           className="inline-block px-6 py-3 bg-red-600 hover:bg-red-700 text-white font-bold rounded-lg transition-colors"
         >
           contact@sos-pro.fr

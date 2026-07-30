@@ -1,0 +1,31 @@
+# À propos de SOS-Pro.fr
+
+SOS-Pro.fr est un média pratique français consacré aux interventions de
+professionnels : artisans, urgences domestiques, automobile, bien-être, beauté,
+services et animaux.
+
+## Ce que propose le site
+
+- Des fourchettes de prix indicatives, jamais contractuelles.
+- Des listes de questions à poser avant d'accepter une intervention.
+- Des conseils pour vérifier identité, assurance, qualification et devis.
+- Des alertes sur les pratiques commerciales à risque.
+- Des articles pratiques et des numéros officiels utiles.
+
+## Ce que le site ne propose pas
+
+- Aucun annuaire exhaustif.
+- Aucun classement individuel de professionnels.
+- Aucune mise en relation et aucune vente de coordonnées.
+- Aucun diagnostic médical, juridique ou technique personnalisé.
+- Aucun service d'urgence.
+
+## Financement
+
+Le contenu est gratuit. Le site peut être financé par Google AdSense et par
+quelques liens Amazon affiliés clairement identifiés. Une commission éventuelle
+ne change pas le prix payé par le lecteur.
+
+## Contact
+
+contact@sos-pro.fr

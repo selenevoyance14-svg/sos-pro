@@ -11,8 +11,8 @@ export default function Footer() {
               SOS<span className="text-yellow-400">Pro</span>.fr
             </h3>
             <p className="text-sm">
-              Guide pratique des professionnels en France : tarifs, conseils
-              et matériel recommandé pour bien choisir.
+              Guides indépendants pour estimer les prix, préparer vos questions
+              et éviter les pièges avant d&apos;appeler un professionnel.
             </p>
           </div>
           <div>
@@ -41,6 +41,16 @@ export default function Footer() {
               <li>
                 <Link href="/mentions-legales" className="hover:text-white transition-colors">
                   Mentions légales
+                </Link>
+              </li>
+              <li>
+                <Link href="/methode-editoriale" className="hover:text-white transition-colors">
+                  Méthode éditoriale
+                </Link>
+              </li>
+              <li>
+                <Link href="/confidentialite" className="hover:text-white transition-colors">
+                  Confidentialité
                 </Link>
               </li>
               <li>

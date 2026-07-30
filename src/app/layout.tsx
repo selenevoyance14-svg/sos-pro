@@ -9,12 +9,39 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: {
-    default: "SOS-Pro.fr — Trouvez un professionnel près de chez vous",
+    default: "SOS-Pro.fr — Tarifs et conseils avant d'appeler un pro",
     template: "%s | SOS-Pro.fr",
   },
   description:
-    "Guide pratique des professionnels en France : tarifs, conseils, comparatifs. Trouvez rapidement un ostéopathe, plombier, coiffeur, garagiste ou vétérinaire dans votre ville.",
+    "Préparez votre intervention : fourchettes de prix, questions à poser, pièges à éviter et critères pour choisir un professionnel près de chez vous.",
   metadataBase: new URL("https://sos-pro.fr"),
+  alternates: { canonical: "/" },
+  openGraph: {
+    type: "website",
+    locale: "fr_FR",
+    siteName: "SOS-Pro.fr",
+    title: "SOS-Pro.fr — Les bons réflexes avant d'appeler un pro",
+    description:
+      "Tarifs indicatifs, questions à poser et pièges à éviter avant de contacter un professionnel.",
+    url: "https://sos-pro.fr",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "SOS-Pro.fr — Les bons réflexes avant d'appeler un pro",
+    description:
+      "Tarifs indicatifs, questions à poser et pièges à éviter avant de contacter un professionnel.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
 };
 
 export default function RootLayout({
@@ -32,7 +59,7 @@ export default function RootLayout({
           strategy="afterInteractive"
         />
       </head>
-      <body className={`${inter.className} antialiased bg-white text-gray-900`}>
+      <body className={`${inter.className} antialiased bg-slate-50 text-slate-950`}>
         <Header />
         <main className="min-h-screen">{children}</main>
         <Footer />

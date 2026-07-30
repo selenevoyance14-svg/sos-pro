@@ -13,6 +13,7 @@ import {
 } from "@/data/content";
 import { numerosUrgence, liensUtiles } from "@/data/numeros-utiles";
 import { produitsParMetier, getAmazonLink } from "@/data/produits-amazon";
+import { isIndexableLocationPage } from "@/data/seo";
 
 export const dynamicParams = false;
 
@@ -41,7 +42,17 @@ export async function generateMetadata({
   return {
     title,
     description,
-    openGraph: { title, description },
+    alternates: { canonical: `/${metier.slug}/${ville.slug}/` },
+    robots: {
+      index: isIndexableLocationPage(metier, ville),
+      follow: true,
+    },
+    openGraph: {
+      title,
+      description,
+      url: `https://sos-pro.fr/${metier.slug}/${ville.slug}/`,
+      type: "article",
+    },
   };
 }
 
@@ -56,8 +67,8 @@ function generateSchemaOrg(
     name: `${metier.nom} à ${ville.nom}`,
     description: `Guide complet : ${metier.nom.toLowerCase()} à ${ville.nom}`,
     about: {
-      "@type": "ProfessionalService",
-      name: metier.nom,
+      "@type": "Service",
+      serviceType: metier.nom,
       areaServed: {
         "@type": "City",
         name: ville.nom,
@@ -242,10 +253,12 @@ export default function MetierVillePage({
               Matériel et produits recommandés pour {nomLower}
             </h2>
             <p className="text-sm text-gray-500 mb-5">
-              Notre sélection de produits utiles, que vous fassiez appel à un {nomLower} à {ville.nom} ou que vous souhaitiez réaliser certaines opérations vous-même.
+              Une courte sélection de matériel utile pour prévenir un problème
+              ou sécuriser la situation. N&apos;entreprenez jamais une opération
+              dangereuse qui exige un professionnel qualifié.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              {produits.map((p, i) => (
+              {produits.slice(0, 3).map((p, i) => (
                 <a
                   key={i}
                   href={getAmazonLink(p.recherche)}

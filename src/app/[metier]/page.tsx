@@ -2,7 +2,6 @@ import Link from "next/link";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { metiers, getMetierBySlug } from "@/data/metiers";
-import { villes } from "@/data/villes";
 
 export async function generateStaticParams() {
   return metiers.map((m) => ({ metier: m.slug }));
@@ -16,8 +15,9 @@ export async function generateMetadata({
   const metier = getMetierBySlug(params.metier);
   if (!metier) return {};
   return {
-    title: `${metier.nom} en France — Trouvez votre ${metier.nom.toLowerCase()} | SOS-Pro.fr`,
-    description: `Liste des villes où trouver un ${metier.nom.toLowerCase()} en France. Tarifs, avis et coordonnées de ${metier.nom.toLowerCase()}s près de chez vous.`,
+    title: `${metier.nom} : tarifs 2026 et conseils pour bien choisir`,
+    description: `${metier.nom} : prix indicatifs, prestations, questions à poser et pièges à éviter avant de contacter un professionnel.`,
+    alternates: { canonical: `/${metier.slug}/` },
   };
 }
 
@@ -35,10 +35,10 @@ export default function MetierPage({
         <div className="max-w-4xl mx-auto text-center">
           <div className="text-5xl mb-4">{metier.icon}</div>
           <h1 className="text-3xl md:text-4xl font-extrabold mb-3">
-            {metier.nom} en France
+            Guide {metier.nom}
           </h1>
           <p className="text-lg opacity-90">
-            Trouvez un {metier.nom.toLowerCase()} dans votre ville
+            Tarifs indicatifs, critères de choix et questions utiles avant d&apos;appeler
           </p>
         </div>
       </section>
@@ -46,21 +46,17 @@ export default function MetierPage({
       <section className="max-w-4xl mx-auto px-4 py-8">
         <p className="text-gray-700 mb-8">{metier.description}</p>
 
-        <h2 className="text-2xl font-bold text-gray-900 mb-6">
-          Choisissez votre ville
-        </h2>
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
-          {villes.map((v) => (
-            <Link
-              key={v.slug}
-              href={`/${metier.slug}/${v.slug}`}
-              className="bg-white rounded-lg p-3 text-center border border-gray-200 hover:border-red-400 hover:shadow-md transition-all"
-            >
-              <div className="text-sm font-medium text-gray-800">
-                {v.nom}
-              </div>
-              <div className="text-xs text-gray-400">{v.departement}</div>
-            </Link>
+        <div className="grid gap-4 md:grid-cols-3">
+          {[
+            ["1", "Sécurisez", "Éloignez les personnes du danger et coupez l'eau, le gaz ou le courant uniquement si cela peut être fait sans risque."],
+            ["2", "Documentez", "Prenez des photos, notez les symptômes de la panne et contactez votre assurance si un sinistre est possible."],
+            ["3", "Faites chiffrer", "Demandez le prix du déplacement, la majoration et un devis écrit avant toute réparation non indispensable."],
+          ].map(([num, title, text]) => (
+            <div key={num} className="rounded-xl border border-gray-200 bg-white p-5">
+              <span className="text-sm font-bold text-red-600">ÉTAPE {num}</span>
+              <h2 className="mt-2 text-lg font-bold text-gray-900">{title}</h2>
+              <p className="mt-2 text-sm leading-relaxed text-gray-600">{text}</p>
+            </div>
           ))}
         </div>
       </section>
