@@ -44,6 +44,11 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/affiliation-amazon" className="hover:text-white transition-colors">
+                  Affiliation Amazon
+                </Link>
+              </li>
+              <li>
                 <Link href="/methode-editoriale" className="hover:text-white transition-colors">
                   Méthode éditoriale
                 </Link>
@@ -63,6 +68,9 @@ export default function Footer() {
         </div>
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-sm">
           <p>© {new Date().getFullYear()} SOS-Pro.fr — Tous droits réservés</p>
+          <p className="mt-3 text-xs">
+            En tant que Partenaire Amazon, je réalise un bénéfice sur les achats remplissant les conditions requises.
+          </p>
         </div>
       </div>
     </footer>

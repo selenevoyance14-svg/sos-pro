@@ -72,6 +72,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   for (const path of [
     "/methode-editoriale",
     "/mentions-legales",
+    "/affiliation-amazon",
     "/confidentialite",
     "/contact",
   ]) {

@@ -137,7 +137,7 @@ function renderSection(s: Section, i: number) {
             ))}
           </div>
           <p className="text-xs text-gray-500 mt-3 italic">
-            En tant que Partenaire Amazon, nous réalisons un bénéfice sur les achats remplissant les conditions applicables.
+            En tant que Partenaire Amazon, je réalise un bénéfice sur les achats remplissant les conditions requises.
           </p>
         </div>
       );

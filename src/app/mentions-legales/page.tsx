@@ -32,6 +32,13 @@ export default function MentionsLegalesPage() {
         tiers peuvent être déposés par Google AdSense à des fins publicitaires.
         Vous pouvez configurer votre navigateur pour refuser les cookies.
       </p>
+      <h2>Affiliation Amazon</h2>
+      <p>
+        En tant que Partenaire Amazon, je réalise un bénéfice sur les achats remplissant les conditions requises.
+        Certains liens présents sur SOS-Pro.fr sont affiliés et peuvent générer une commission sans modifier le prix
+        payé par l&apos;utilisateur. Le site ne vend pas les produits recommandés et n&apos;affiche pas leurs prix.
+        Le prix, la disponibilité, la livraison et le service après-vente relèvent d&apos;Amazon et du vendeur concerné.
+      </p>
     </div>
   );
 }

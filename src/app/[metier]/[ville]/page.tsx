@@ -284,7 +284,7 @@ export default function MetierVillePage({
               ))}
             </div>
             <p className="text-xs text-gray-400 mt-4 italic">
-              En tant que Partenaire Amazon, nous réalisons un bénéfice sur les achats remplissant les conditions applicables. Cela ne change pas le prix pour vous.
+              En tant que Partenaire Amazon, je réalise un bénéfice sur les achats remplissant les conditions requises. Cela ne change pas le prix pour vous.
             </p>
           </div>
         </section>
