@@ -11,6 +11,8 @@ export default function ConfidentialitePage() {
   return (
     <article className="max-w-3xl mx-auto px-4 py-14 prose prose-slate">
       <h1>Politique de confidentialité</h1>
+      <h2>Responsable du traitement</h2>
+      <p>Nathalie Lebrun, entrepreneur individuel, 524 rue de la Tourrache, 83600 Fréjus, France — <a href="mailto:contact@sos-pro.fr">contact@sos-pro.fr</a>.</p>
       <p>
         SOS-Pro.fr ne demande pas de compte et ne vend pas les coordonnées de
         ses visiteurs. Un courriel envoyé à notre adresse de contact est utilisé

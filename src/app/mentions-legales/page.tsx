@@ -11,9 +11,12 @@ export default function MentionsLegalesPage() {
       <h1>Mentions légales</h1>
       <h2>Éditeur du site</h2>
       <p>
-        SOS-Pro.fr est un site édité par un particulier.
-        <br />
-        Contact : contact@sos-pro.fr
+        SOS-Pro.fr est édité par <strong>Nathalie Lebrun</strong>, entrepreneur individuel.<br />
+        Adresse : 524 rue de la Tourrache, 83600 Fréjus, France.<br />
+        SIREN : 101 331 585.<br />
+        SIRET : 101 331 585 00014.<br />
+        Contact : <a href="mailto:contact@sos-pro.fr">contact@sos-pro.fr</a>.<br />
+        Directrice de la publication : Nathalie Lebrun.
       </p>
       <h2>Hébergement</h2>
       <p>
@@ -28,9 +31,8 @@ export default function MentionsLegalesPage() {
       </p>
       <h2>Données personnelles</h2>
       <p>
-        Ce site ne collecte aucune donnée personnelle directement. Des cookies
-        tiers peuvent être déposés par Google AdSense à des fins publicitaires.
-        Vous pouvez configurer votre navigateur pour refuser les cookies.
+        Les traitements de données, cookies et outils tiers sont détaillés dans la
+        <a href="/confidentialite"> politique de confidentialité</a>.
       </p>
       <h2>Affiliation Amazon</h2>
       <p>
