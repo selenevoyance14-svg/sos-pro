@@ -20,8 +20,9 @@ export default function MentionsLegalesPage() {
       </p>
       <h2>Hébergement</h2>
       <p>
-        Ce site est hébergé par Vercel Inc., 340 S Lemon Ave #4133, Walnut, CA
-        91789, États-Unis.
+        Ce site est hébergé par Cloudflare, Inc., 101 Townsend Street, San
+        Francisco, CA 94107, États-Unis — {" "}
+        <a href="https://www.cloudflare.com" target="_blank" rel="noopener noreferrer">cloudflare.com</a>.
       </p>
       <h2>Propriété intellectuelle</h2>
       <p>
