@@ -8,6 +8,9 @@ import Script from "next/script";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
+  other: {
+    "google-adsense-account": "ca-pub-5064203547863113",
+  },
   title: {
     default: "SOS-Pro.fr — Tarifs et conseils avant d'appeler un pro",
     template: "%s | SOS-Pro.fr",
