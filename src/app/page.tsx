@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import SearchBar from "@/components/SearchBar";
+import HelloArtisanCta from "@/components/HelloArtisanCta";
 import { getLatestArticles } from "@/data/articles";
 
 export const metadata: Metadata = {
@@ -86,7 +87,7 @@ export default function HomePage() {
         <div className="relative mx-auto max-w-6xl px-4 py-20 md:py-28">
           <div className="max-w-3xl">
             <p className="mb-5 inline-flex rounded-full border border-red-400/30 bg-red-500/10 px-4 py-2 text-sm font-semibold text-red-200">
-              Guides gratuits · aucun formulaire · aucune vente de coordonnées
+              Guides gratuits · SOS‑Pro ne vend pas vos coordonnées
             </p>
             <h1 className="text-4xl font-black leading-tight tracking-tight md:text-6xl">
               Un problème urgent ?<br />
@@ -189,9 +190,10 @@ export default function HomePage() {
             </p>
             <h2 className="mt-3 text-3xl font-black">Informer, pas vendre un dépanneur</h2>
             <p className="mt-5 leading-relaxed text-red-50">
-              SOS-Pro n’est pas un annuaire et ne transmet aucune coordonnée.
-              Nous expliquons quoi faire, combien une intervention peut coûter
-              et quelles questions poser.
+              Les guides SOS‑Pro restent gratuits et indépendants. Nous expliquons
+              quoi faire, combien une intervention peut coûter et quelles questions
+              poser. Notre service partenaire de devis est toujours signalé avant
+              que vous quittiez le site.
             </p>
             <Link
               href="/methode-editoriale/"
@@ -201,6 +203,10 @@ export default function HomePage() {
             </Link>
           </aside>
         </div>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-4 pb-16">
+        <HelloArtisanCta />
       </section>
 
       {latestArticles.length > 0 ? (

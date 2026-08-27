@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { metiers, getMetierBySlug } from "@/data/metiers";
+import HelloArtisanCta from "@/components/HelloArtisanCta";
 
 export async function generateStaticParams() {
   return metiers.map((m) => ({ metier: m.slug }));
@@ -59,6 +60,10 @@ export default function MetierPage({
             </div>
           ))}
         </div>
+      </section>
+
+      <section className="mx-auto max-w-4xl px-4 pb-12">
+        <HelloArtisanCta compact />
       </section>
 
       {/* FAQ */}

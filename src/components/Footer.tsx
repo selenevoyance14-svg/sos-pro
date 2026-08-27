@@ -44,8 +44,8 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/affiliation-amazon" className="hover:text-white transition-colors">
-                  Affiliation Amazon
+                <Link href="/affiliation" className="hover:text-white transition-colors">
+                  Affiliation et partenaires
                 </Link>
               </li>
               <li>
