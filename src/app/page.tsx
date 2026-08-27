@@ -111,6 +111,10 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section className="mx-auto max-w-6xl px-4 pt-10">
+        <HelloArtisanCta compact />
+      </section>
+
       <section className="mx-auto max-w-6xl px-4 py-16">
         <p className="text-sm font-bold uppercase tracking-widest text-red-600">
           Que se passe-t-il ?
