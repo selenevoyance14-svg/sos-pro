@@ -41,7 +41,8 @@ export default function HeaderSearch() {
       <div className="flex items-center bg-white/20 rounded-lg">
         <input
           type="text"
-          placeholder="Rechercher un pro, une ville..."
+          placeholder="Rechercher une urgence..."
+          aria-label="Rechercher un guide d’urgence"
           value={query}
           onChange={(e) => {
             setQuery(e.target.value);

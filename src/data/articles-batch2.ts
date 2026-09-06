@@ -15,7 +15,7 @@ export const articlesBatch2: Article[] = [
     date: "2026-07-29",
     readTime: 5,
     intro:
-      "Une chaudière qui lâche un dimanche de janvier, c'est le stress assuré. Avant d'appeler un chauffagiste d'urgence (comptez 200 à 400 euros de déplacement week-end), quelques vérifications simples résolvent 30 % des pannes.",
+      "Une chaudière qui lâche un dimanche de janvier, c'est le stress assuré. Avant d'appeler un chauffagiste d'urgence, quelques vérifications simples et sans démontage permettent parfois d'identifier une cause bénigne.",
     sections: [
       { type: "h2", text: "Les vérifications immédiates" },
       {
@@ -134,7 +134,7 @@ export const articlesBatch2: Article[] = [
           { nom: "Multimètre numérique automatique", description: "Mesure tension, résistance et continuité : indispensable pour un vrai diagnostic.", recherche: "multimetre numerique automatique" },
           { nom: "Testeur de prise 220V à LED", description: "Se branche sur une prise et affiche la conformité par voyants : 30 secondes pour vérifier une installation.", recherche: "testeur prise 220v led terre" },
           { nom: "Interrupteur différentiel 40A 30mA", description: "Remplacement d'un différentiel usé — seul un électricien doit le poser.", recherche: "interrupteur differentiel 40a 30ma" },
-          { nom: "Lampe frontale rechargeable", description: "Travailler dans le tableau électrique sans dépendre du plafonnier qu'on vient de couper.", recherche: "lampe frontale rechargeable usb" },
+          { nom: "Lampe frontale rechargeable", description: "S'éclairer pendant une coupure sans intervenir à l'intérieur du tableau électrique.", recherche: "lampe frontale rechargeable usb" },
         ],
       },
       { type: "h2", text: "Quand appeler un électricien" },
@@ -1057,12 +1057,12 @@ export const articlesBatch2: Article[] = [
         items: [
           "Thermomètre rectal (température normale 38-39 °C chien et chat).",
           "Solution physiologique stérile (nettoyer plaies et yeux).",
-          "Bétadine dermique (antiseptique de contact).",
-          "Compresses stériles et bandes de contention.",
+          "Sérum physiologique et compresses stériles.",
+          "Bandes propres sans serrage excessif.",
           "Ciseaux à bouts ronds.",
           "Pince à tiques (retire les tiques sans les laisser encastrées).",
           "Muselière tissu (un animal souffrant peut mordre par réflexe).",
-          "Charbon activé (empoisonnement léger, sur avis vétérinaire).",
+          "Couverture et serviette propre pour limiter les mouvements pendant le transport.",
         ],
       },
       { type: "h2", text: "Signaux qui doivent faire consulter en urgence" },
@@ -1092,7 +1092,7 @@ export const articlesBatch2: Article[] = [
       { type: "h2", text: "Numéros à avoir sur le frigo" },
       {
         type: "p",
-        text: "Vétérinaire habituel + garde week-end (souvent différent). Centre anti-poison animal (015 gratuit). Refuge/SPA local en cas d'animal errant blessé trouvé.",
+        text: "Conservez le numéro de votre vétérinaire habituel et celui du service de garde indiqué sur son répondeur. En cas d’ingestion, appelez immédiatement un vétérinaire ou un centre antipoison vétérinaire et suivez uniquement leurs consignes.",
       },
     ],
   },

@@ -30,9 +30,14 @@ export default function CategoryPage({
   const category = categories.find((item) => item.slug === params.slug);
   if (!category) notFound();
   const guides = getMetiersByCategorie(category.slug);
+  const schemas = [
+    { "@context": "https://schema.org", "@type": "CollectionPage", name: "Guides d’urgences 24h/24", url: "https://sos-pro.fr/categorie/urgences/", mainEntity: { "@type": "ItemList", itemListElement: guides.map((guide, index) => ({ "@type": "ListItem", position: index + 1, name: guide.nom, url: `https://sos-pro.fr/${guide.slug}/` })) } },
+    { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "Accueil", item: "https://sos-pro.fr/" }, { "@type": "ListItem", position: 2, name: "Urgences 24h/24", item: "https://sos-pro.fr/categorie/urgences/" }] },
+  ];
 
   return (
     <>
+      {schemas.map((schema, index) => <script key={index} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />)}
       <section className="bg-slate-950 px-4 py-16 text-white">
         <div className="mx-auto max-w-5xl">
           <p className="text-sm font-bold uppercase tracking-widest text-red-400">

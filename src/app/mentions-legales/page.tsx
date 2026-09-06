@@ -1,8 +1,9 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Mentions légales — SOS-Pro.fr",
-  description: "Mentions légales du site SOS-Pro.fr",
+  title: "Mentions légales",
+  description: "Éditeur, responsable de publication, hébergeur et informations légales du site indépendant SOS-Pro.fr.",
+  alternates: { canonical: "/mentions-legales/" },
 };
 
 export default function MentionsLegalesPage() {

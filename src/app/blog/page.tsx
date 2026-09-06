@@ -4,10 +4,10 @@ import { articles } from "@/data/articles";
 import { getMetierBySlug } from "@/data/metiers";
 
 export const metadata: Metadata = {
-  title: "Blog — Guides et conseils pour trouver un professionnel",
+  title: "Guides pratiques pour les urgences du quotidien",
   description:
-    "Articles pratiques pour choisir un ostéopathe, un plombier, un photographe ou un coach sportif : tarifs, critères de sélection, pièges à éviter.",
-  alternates: { canonical: "/blog" },
+    "Fuite d’eau, serrure, électricité, chauffage, vitre, voiture ou animal : gestes de sécurité, tarifs et conseils avant d’appeler.",
+  alternates: { canonical: "/blog/" },
 };
 
 export default function BlogIndex() {
@@ -21,7 +21,7 @@ export default function BlogIndex() {
             Blog SOS-Pro
           </h1>
           <p className="text-lg opacity-90">
-            Guides et conseils pour bien choisir votre professionnel
+            Sécurité, tarifs et conseils avant d’appeler
           </p>
         </div>
       </section>
@@ -63,16 +63,14 @@ export default function BlogIndex() {
             Choisir un professionnel : nos conseils pratiques
           </h2>
           <p>
-            Trouver le bon professionnel — qu&apos;il s&apos;agisse d&apos;un ostéopathe
-            pour une lombalgie, d&apos;un plombier pour une fuite ou d&apos;un
-            photographe pour votre mariage — demande de savoir poser les bonnes
-            questions et de reconnaître les signaux de confiance.
+            Face à une fuite, une porte bloquée ou une panne, la priorité est de
+            sécuriser les personnes et d&apos;éviter d&apos;aggraver les dégâts. Ensuite,
+            quelques informations précises permettent d&apos;obtenir un devis plus clair.
           </p>
           <p>
-            Notre blog rassemble des guides pratiques, basés sur les tarifs
-            réels observés en 2026 et les retours de consommateurs, pour vous
-            aider à éviter les pièges les plus fréquents et à choisir en toute
-            sérénité.
+            Nos guides distinguent les gestes sans danger, les situations qui
+            exigent les secours et les vérifications utiles avant d&apos;accepter une
+            intervention. Les montants restent indicatifs : exigez toujours un devis.
           </p>
         </div>
       </section>

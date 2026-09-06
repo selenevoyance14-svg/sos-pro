@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "seo:audit": "node scripts/audit-seo.cjs",
+    "verify": "npm run build && npm run seo:audit"
   },
   "dependencies": {
     "react": "^18",

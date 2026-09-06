@@ -1,11 +1,9 @@
 import { MetadataRoute } from "next";
 import { metiers, categories } from "@/data/metiers";
-import { villes } from "@/data/villes";
 import { articles } from "@/data/articles";
-import { isIndexableLocationPage } from "@/data/seo";
 
 const BASE_URL = "https://sos-pro.fr";
-const REVIEW_DATE = new Date("2026-07-30");
+const REVIEW_DATE = new Date("2026-09-06");
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const entries: MetadataRoute.Sitemap = [];
@@ -38,19 +36,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     });
   }
 
-  // Metier x Ville pages
-  for (const m of metiers) {
-    for (const v of villes) {
-      if (!isIndexableLocationPage(m, v)) continue;
-      entries.push({
-        url: `${BASE_URL}/${m.slug}/${v.slug}`,
-        lastModified: REVIEW_DATE,
-        changeFrequency: "monthly",
-        priority: 0.6,
-      });
-    }
-  }
-
   // Blog index
   entries.push({
     url: `${BASE_URL}/blog`,
@@ -72,7 +57,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   for (const path of [
     "/methode-editoriale",
     "/mentions-legales",
-    "/affiliation-amazon",
+    "/affiliation",
     "/confidentialite",
     "/contact",
   ]) {

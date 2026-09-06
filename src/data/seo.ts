@@ -7,4 +7,4 @@ export function isIndexableLocationPage(metier: Metier, ville: Ville) {
   return false;
 }
 
-export const EDITORIAL_REVIEW_DATE = "30 juillet 2026";
+export const EDITORIAL_REVIEW_DATE = "6 septembre 2026";

@@ -152,7 +152,7 @@ const articleCatalog: Article[] = [
       { type: "h2", text: "Urgence : attention aux arnaques" },
       {
         type: "p",
-        text: "C'est sur les dépannages d'urgence le week-end ou la nuit que les abus sont les plus fréquents. Les majorations légales sont plafonnées : maximum +50 % la nuit (20h-8h), +100 % les dimanches et jours fériés. Certaines entreprises facturent 500 ou 800 euros pour un simple joint à changer.",
+        text: "Les dépannages de nuit, du week-end ou des jours fériés peuvent faire l’objet d’une majoration. Il n’existe pas de plafond général identique pour tous les dépannages : le professionnel doit annoncer ses tarifs et vous remettre un devis avant les travaux, sauf urgence absolue limitée à la mise en sécurité.",
       },
       {
         type: "ul",
@@ -461,7 +461,7 @@ const articleCatalog: Article[] = [
           "Ouverture porte claquée (serrure haute sécurité) : 150 à 300 euros",
           "Ouverture porte fermée à clé : 150 à 400 euros",
           "Déblocage serrure bloquée : 100 à 250 euros",
-          "Majoration nuit (20h-8h) : maximum +50 %",
+          "Majoration de nuit clairement annoncée avant l’intervention",
           "Majoration dimanche/jour férié : maximum +100 %",
         ],
       },

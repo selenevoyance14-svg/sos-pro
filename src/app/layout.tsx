@@ -3,7 +3,6 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import Script from "next/script";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -27,12 +26,14 @@ export const metadata: Metadata = {
     description:
       "Tarifs indicatifs, questions à poser et pièges à éviter avant de contacter un professionnel.",
     url: "https://sos-pro.fr",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "SOS-Pro.fr — les bons réflexes avant d’appeler" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "SOS-Pro.fr — Les bons réflexes avant d'appeler un pro",
     description:
       "Tarifs indicatifs, questions à poser et pièges à éviter avant de contacter un professionnel.",
+    images: ["/opengraph-image"],
   },
   robots: {
     index: true,
@@ -55,14 +56,10 @@ export default function RootLayout({
   return (
     <html lang="fr">
       <head>
-        <Script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5064203547863113"
-          crossOrigin="anonymous"
-          strategy="afterInteractive"
-        />
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5064203547863113" crossOrigin="anonymous" />
       </head>
       <body className={`${inter.className} antialiased bg-slate-50 text-slate-950`}>
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "Organization", name: "SOS-Pro.fr", url: "https://sos-pro.fr/", email: "contact@sos-pro.fr", founder: { "@type": "Person", name: "Nathalie Lebrun" }, publishingPrinciples: "https://sos-pro.fr/methode-editoriale/" }) }} />
         <Header />
         <main className="min-h-screen">{children}</main>
         <Footer />

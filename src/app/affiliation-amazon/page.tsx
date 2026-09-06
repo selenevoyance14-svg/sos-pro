@@ -3,6 +3,8 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Affiliation Amazon — SOS-Pro.fr",
   description: "Informations sur les liens affiliés Amazon présents sur SOS-Pro.fr.",
+  alternates: { canonical: "/affiliation/" },
+  robots: { index: false, follow: true },
 };
 
 export default function AffiliationAmazonPage() {

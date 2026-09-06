@@ -1,9 +1,10 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Contact — SOS-Pro.fr",
+  title: "Contact",
   description:
-    "Contactez-nous pour toute question, inscription de votre cabinet ou signalement.",
+    "Contactez l’équipe éditoriale de SOS-Pro.fr pour poser une question, suggérer une correction ou signaler une information à vérifier.",
+  alternates: { canonical: "/contact/" },
 };
 
 export default function ContactPage() {

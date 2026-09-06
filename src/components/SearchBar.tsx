@@ -19,6 +19,7 @@ export default function SearchBar() {
     <form onSubmit={handleSearch} className="w-full max-w-2xl mx-auto">
       <div className="flex flex-col sm:flex-row gap-3 max-w-xl mx-auto">
         <select
+          aria-label="Choisir le type d’urgence"
           value={metier}
           onChange={(e) => setMetier(e.target.value)}
           className="flex-1 px-4 py-3 rounded-lg border border-gray-300 text-gray-800 bg-white focus:ring-2 focus:ring-red-500 focus:border-transparent"
@@ -32,7 +33,8 @@ export default function SearchBar() {
         </select>
         <button
           type="submit"
-          className="px-8 py-3 bg-red-600 hover:bg-red-700 text-white font-bold rounded-lg transition-colors shadow-md"
+          disabled={!metier}
+          className="px-8 py-3 bg-red-600 hover:bg-red-700 disabled:cursor-not-allowed disabled:bg-slate-500 text-white font-bold rounded-lg transition-colors shadow-md"
         >
           Voir les bons réflexes
         </button>

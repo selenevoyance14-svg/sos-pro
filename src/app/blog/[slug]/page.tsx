@@ -8,8 +8,17 @@ import {
   type Section,
 } from "@/data/articles";
 import { getMetierBySlug } from "@/data/metiers";
-import { villes } from "@/data/villes";
 import { getAmazonLink } from "@/data/produits-amazon";
+
+const activeGuideHref: Record<string, string> = {
+  "/plombier": "/plombier-urgence/",
+  "/serrurier": "/serrurier-urgence/",
+  "/electricien": "/electricien-urgence/",
+  "/chauffagiste": "/chauffagiste-urgence/",
+  "/vitrier": "/vitrier-urgence/",
+  "/depanneur-auto": "/depanneur-auto-urgence/",
+  "/veterinaire": "/veterinaire-urgence/",
+};
 
 export const dynamicParams = false;
 
@@ -25,7 +34,7 @@ export async function generateMetadata({
   const a = getArticleBySlug(params.slug);
   if (!a) return {};
   return {
-    title: a.title,
+    title: { absolute: a.title },
     description: a.description,
     alternates: { canonical: `/blog/${a.slug}` },
     openGraph: {
@@ -92,7 +101,7 @@ function renderSection(s: Section, i: number) {
           className="my-8 bg-red-50 border-l-4 border-red-500 rounded-lg p-6"
         >
           <Link
-            href={s.href}
+            href={activeGuideHref[s.href] ?? s.href}
             className="inline-flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white font-semibold px-6 py-3 rounded-lg transition-colors"
           >
             {s.text} →
@@ -154,7 +163,6 @@ export default function ArticlePage({
 
   const metier = getMetierBySlug(a.metier);
   const related = getRelatedArticles(a.slug, 3);
-  const topVilles = villes.slice(0, 8);
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -163,15 +171,13 @@ export default function ArticlePage({
     description: a.description,
     datePublished: a.date,
     dateModified: a.date,
-    author: {
-      "@type": "Organization",
-      name: "SOS-Pro.fr",
-    },
+    author: { "@type": "Organization", name: "SOS-Pro.fr", url: "https://sos-pro.fr/methode-editoriale/" },
     publisher: {
       "@type": "Organization",
       name: "SOS-Pro.fr",
       url: "https://sos-pro.fr",
     },
+    image: "https://sos-pro.fr/opengraph-image",
     mainEntityOfPage: {
       "@type": "WebPage",
       "@id": `https://sos-pro.fr/blog/${a.slug}`,
@@ -230,30 +236,7 @@ export default function ArticlePage({
           {a.sections.map((s, i) => renderSection(s, i))}
         </div>
 
-        {metier && (
-          <section className="mt-12 bg-gray-50 rounded-xl p-6 border border-gray-200">
-            <h2 className="text-xl font-bold text-gray-900 mb-4">
-              Trouver un {metier.nom.toLowerCase()} par ville
-            </h2>
-            <div className="flex flex-wrap gap-2">
-              {topVilles.map((v) => (
-                <Link
-                  key={v.slug}
-                  href={`/${metier.slug}/${v.slug}`}
-                  className="px-3 py-1 bg-white hover:bg-red-50 hover:text-red-600 border border-gray-200 rounded-full text-sm transition-colors"
-                >
-                  {metier.nom} à {v.nom}
-                </Link>
-              ))}
-              <Link
-                href={`/${metier.slug}`}
-                className="px-3 py-1 bg-red-600 text-white hover:bg-red-700 rounded-full text-sm font-medium transition-colors"
-              >
-                Voir toutes les villes →
-              </Link>
-            </div>
-          </section>
-        )}
+        {metier && <section className="mt-12 rounded-xl border border-red-100 bg-red-50 p-6"><h2 className="text-xl font-bold text-slate-950">Besoin des gestes immédiats ?</h2><p className="mt-2 text-slate-700">Consultez le guide complet avant d’appeler : sécurité, tarifs indicatifs et questions à poser.</p><Link href={`/${metier.slug}/`} className="mt-4 inline-flex rounded-lg bg-red-600 px-5 py-3 font-bold text-white hover:bg-red-700">Guide {metier.nom} →</Link></section>}
       </article>
 
       {related.length > 0 && (
