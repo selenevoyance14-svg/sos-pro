@@ -1,3 +1,4 @@
+import { articlesOctobre2026, articleUpdates } from "./articles-octobre-2026";
 import { articlesBatch2 } from "./articles-batch2";
 
 export type Section =
@@ -15,6 +16,8 @@ export type Article = {
   description: string;
   metier: string;
   date: string;
+  updated?: string;
+  sources?: { label: string; href: string }[];
   readTime: number;
   intro: string;
   sections: Section[];
@@ -4382,12 +4385,13 @@ const articleCatalog: Article[] = [
 ];
 
 // Merge du 2e lot d'articles (batch2) — cible metiers sous-representes
-articleCatalog.push(...articlesBatch2);
+articleCatalog.push(...articlesBatch2, ...articlesOctobre2026);
+const refreshedCatalog = articleCatalog.map((article) => ({ ...article, ...articleUpdates[article.slug] }));
 
 const emergencyArticlePattern =
   /(urgence|fuite|panne|serrure|porte bloquée|effraction|disjoncteur|chauffage|chaudière|vitre cassée|batterie|pneu crevé|intoxication|vétérinaire de garde)/i;
 
-export const articles = articleCatalog.filter((article) =>
+export const articles = refreshedCatalog.filter((article) =>
   emergencyArticlePattern.test(
     `${article.title} ${article.description} ${article.intro}`
   )
@@ -4399,7 +4403,7 @@ export function getArticleBySlug(slug: string): Article | undefined {
 
 export function getLatestArticles(count: number): Article[] {
   return [...articles]
-    .sort((a, b) => b.date.localeCompare(a.date))
+    .sort((a, b) => (b.updated || b.date).localeCompare(a.updated || a.date) || b.date.localeCompare(a.date))
     .slice(0, count);
 }
 

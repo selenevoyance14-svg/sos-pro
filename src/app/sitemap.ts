@@ -3,7 +3,7 @@ import { metiers, categories } from "@/data/metiers";
 import { articles } from "@/data/articles";
 
 const BASE_URL = "https://sos-pro.fr";
-const REVIEW_DATE = new Date("2026-09-06");
+const REVIEW_DATE = new Date("2026-10-14");
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const entries: MetadataRoute.Sitemap = [];
@@ -48,7 +48,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   for (const a of articles) {
     entries.push({
       url: `${BASE_URL}/blog/${a.slug}`,
-      lastModified: new Date(a.date),
+      lastModified: new Date(a.updated || a.date),
       changeFrequency: "monthly",
       priority: 0.7,
     });

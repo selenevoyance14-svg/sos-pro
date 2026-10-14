@@ -4,5 +4,15 @@
   "assets": {
     "directory": "./out",
     "not_found_handling": "404-page"
-  }
+  },
+  "routes": [
+    {
+      "pattern": "sos-pro.fr",
+      "custom_domain": true
+    },
+    {
+      "pattern": "www.sos-pro.fr",
+      "custom_domain": true
+    }
+  ]
 }

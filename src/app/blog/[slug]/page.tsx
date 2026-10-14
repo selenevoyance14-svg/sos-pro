@@ -42,6 +42,7 @@ export async function generateMetadata({
       description: a.description,
       type: "article",
       publishedTime: a.date,
+      modifiedTime: a.updated || a.date,
     },
   };
 }
@@ -170,7 +171,7 @@ export default function ArticlePage({
     headline: a.title,
     description: a.description,
     datePublished: a.date,
-    dateModified: a.date,
+    dateModified: a.updated || a.date,
     author: { "@type": "Organization", name: "SOS-Pro.fr", url: "https://sos-pro.fr/methode-editoriale/" },
     publisher: {
       "@type": "Organization",
@@ -184,7 +185,7 @@ export default function ArticlePage({
     },
   };
 
-  const formattedDate = new Date(a.date).toLocaleDateString("fr-FR", {
+  const formattedDate = new Date(a.updated || a.date).toLocaleDateString("fr-FR", {
     day: "numeric",
     month: "long",
     year: "numeric",
@@ -234,6 +235,14 @@ export default function ArticlePage({
 
         <div className="prose prose-gray max-w-none">
           {a.sections.map((s, i) => renderSection(s, i))}
+          {a.sources?.length ? (
+            <section className="mt-10 rounded-xl border border-gray-200 bg-gray-50 p-5">
+              <h2 className="text-xl font-bold text-gray-900 mb-3">Sources officielles et informations utiles</h2>
+              <ul className="space-y-2">
+                {a.sources.map((source) => <li key={source.href}><a href={source.href} target="_blank" rel="noopener noreferrer" className="text-red-700 underline">{source.label}</a></li>)}
+              </ul>
+            </section>
+          ) : null}
         </div>
 
         {metier && <section className="mt-12 rounded-xl border border-red-100 bg-red-50 p-6"><h2 className="text-xl font-bold text-slate-950">Besoin des gestes immédiats ?</h2><p className="mt-2 text-slate-700">Consultez le guide complet avant d’appeler : sécurité, tarifs indicatifs et questions à poser.</p><Link href={`/${metier.slug}/`} className="mt-4 inline-flex rounded-lg bg-red-600 px-5 py-3 font-bold text-white hover:bg-red-700">Guide {metier.nom} →</Link></section>}

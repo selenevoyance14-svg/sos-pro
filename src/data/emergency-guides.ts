@@ -10,7 +10,7 @@ export const emergencyGuides: Record<string, EmergencyGuide> = {
   "plombier-urgence": {
     immediateActions: [
       "Fermez le robinet d’arrêt de l’équipement concerné ou l’arrivée d’eau générale, sans forcer une vanne bloquée.",
-      "Coupez l’électricité au disjoncteur général si l’eau menace une prise, un appareil ou le tableau électrique.",
+      "Si l’eau menace l’électricité, coupez au disjoncteur uniquement s’il est accessible sans traverser une zone dangereuse ; sinon, éloignez-vous et appelez une aide adaptée.",
       "Épongez ou recueillez l’eau, déplacez les objets fragiles et photographiez les dégâts pour l’assurance.",
       "Si la fuite vient d’un logement voisin ou d’une partie commune, prévenez immédiatement l’occupant ou le syndic.",
     ],

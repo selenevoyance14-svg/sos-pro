@@ -23,7 +23,7 @@ const firstReflexes = [
   {
     icon: "🚿",
     title: "Fuite d’eau",
-    text: "Fermez l’arrivée d’eau générale, coupez l’électricité si l’eau approche une installation et prenez des photos.",
+    text: "Fermez l’eau si la vanne est accessible sans danger. Si l’eau menace l’électricité, éloignez-vous et demandez une aide adaptée.",
     href: "/plombier-urgence/",
   },
   {
@@ -221,7 +221,7 @@ export default function HomePage() {
                 <p className="text-sm font-bold uppercase tracking-widest text-red-600">
                   Conseils pratiques
                 </p>
-                <h2 className="mt-2 text-3xl font-black text-slate-950">À lire avant la panne</h2>
+                <h2 className="mt-2 text-3xl font-black text-slate-950">Nouveaux guides et conseils actualisés</h2>
               </div>
               <Link href="/blog/" className="hidden font-bold text-red-600 sm:block">
                 Tous les guides →

@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 };
 
 export default function BlogIndex() {
-  const sorted = [...articles].sort((a, b) => b.date.localeCompare(a.date));
+  const sorted = [...articles].sort((a, b) => (b.updated || b.date).localeCompare(a.updated || a.date) || b.date.localeCompare(a.date));
 
   return (
     <>
