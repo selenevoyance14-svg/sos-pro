@@ -32,7 +32,7 @@ export default function MetierPage({ params }: { params: { metier: string } }) {
   const guide = emergencyGuides[metier.slug];
   if (!guide) notFound();
   const tarifs = getEstimatedTarifs(metier.slug, { slug: "france", nom: "France", departement: "", codePostal: "", population: 100000 });
-  const relatedArticles = articles.filter((article) => article.metier === metier.slug).slice(0, 4);
+  const relatedArticles = articles.filter((article) => article.metier === metier.slug).sort((a, b) => (b.updated || b.date).localeCompare(a.updated || a.date)).slice(0, 4);
   const canonical = `${BASE_URL}/${metier.slug}/`;
   const schemas = [
     { "@context": "https://schema.org", "@type": "Article", headline: `${metier.nom} : gestes immédiats et tarifs 2026`, description: metier.description, datePublished: "2026-07-30", dateModified: REVIEW_DATE, mainEntityOfPage: { "@type": "WebPage", "@id": canonical }, author: { "@type": "Organization", name: "SOS-Pro.fr", url: `${BASE_URL}/methode-editoriale/` }, publisher: { "@type": "Organization", name: "SOS-Pro.fr", url: BASE_URL } },

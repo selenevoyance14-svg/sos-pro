@@ -37,7 +37,11 @@ export async function generateMetadata({
     title: { absolute: a.title },
     description: a.description,
     alternates: { canonical: `/blog/${a.slug}` },
+    twitter: { card: "summary_large_image", title: a.title, description: a.description, images: ["/opengraph-image"] },
     openGraph: {
+      url: `https://sos-pro.fr/blog/${a.slug}/`,
+      locale: "fr_FR",
+      images: [{ url: "/opengraph-image", width: 1200, height: 630 }],
       title: a.title,
       description: a.description,
       type: "article",
@@ -53,6 +57,7 @@ function renderSection(s: Section, i: number) {
       return (
         <h2
           key={i}
+          id={`section-${i}`}
           className="text-2xl font-bold text-gray-900 mt-10 mb-4"
         >
           {s.text}
@@ -103,6 +108,7 @@ function renderSection(s: Section, i: number) {
         >
           <Link
             href={activeGuideHref[s.href] ?? s.href}
+            download={s.href.endsWith(".txt") ? true : undefined}
             className="inline-flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white font-semibold px-6 py-3 rounded-lg transition-colors"
           >
             {s.text} →
@@ -168,6 +174,7 @@ export default function ArticlePage({
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Article",
+    inLanguage: "fr-FR",
     headline: a.title,
     description: a.description,
     datePublished: a.date,
@@ -185,6 +192,13 @@ export default function ArticlePage({
     },
   };
 
+  const breadcrumbs = {
+    "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Accueil", item: "https://sos-pro.fr/" },
+      { "@type": "ListItem", position: 2, name: "Conseils", item: "https://sos-pro.fr/blog/" },
+      { "@type": "ListItem", position: 3, name: a.title, item: `https://sos-pro.fr/blog/${a.slug}/` }
+    ]
+  };
   const formattedDate = new Date(a.updated || a.date).toLocaleDateString("fr-FR", {
     day: "numeric",
     month: "long",
@@ -198,8 +212,9 @@ export default function ArticlePage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbs) }} />
       <article className="max-w-3xl mx-auto px-4 py-10">
-        <nav className="text-sm text-gray-500 mb-6">
+        <nav aria-label="Fil d’Ariane" className="text-sm text-gray-500 mb-6">
           <Link href="/" className="hover:text-red-600">
             Accueil
           </Link>
@@ -233,6 +248,12 @@ export default function ArticlePage({
           {a.intro}
         </p>
 
+        <nav aria-label="Sommaire" className="mb-8 rounded-xl border border-gray-200 bg-gray-50 p-5">
+          <h2 className="mb-3 text-lg font-bold text-gray-900">Dans ce guide</h2>
+          <ul className="space-y-2 text-sm">
+            {a.sections.map((section, index) => section.type === "h2" ? <li key={index}><a className="text-red-700 underline" href={`#section-${index}`}>{section.text}</a></li> : null)}
+          </ul>
+        </nav>
         <div className="prose prose-gray max-w-none">
           {a.sections.map((s, i) => renderSection(s, i))}
           {a.sources?.length ? (

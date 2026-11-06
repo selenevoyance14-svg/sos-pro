@@ -1,3 +1,4 @@
+import { articlesNovembre2026 } from "./articles-novembre-2026";
 import { articlesOctobre2026, articleUpdates } from "./articles-octobre-2026";
 import { articlesBatch2 } from "./articles-batch2";
 
@@ -4385,14 +4386,15 @@ const articleCatalog: Article[] = [
 ];
 
 // Merge du 2e lot d'articles (batch2) — cible metiers sous-representes
-articleCatalog.push(...articlesBatch2, ...articlesOctobre2026);
+articleCatalog.push(...articlesBatch2, ...articlesOctobre2026, ...articlesNovembre2026);
 const refreshedCatalog = articleCatalog.map((article) => ({ ...article, ...articleUpdates[article.slug] }));
 
 const emergencyArticlePattern =
   /(urgence|fuite|panne|serrure|porte bloquée|effraction|disjoncteur|chauffage|chaudière|vitre cassée|batterie|pneu crevé|intoxication|vétérinaire de garde)/i;
 
+const novemberSlugs = new Set(articlesNovembre2026.map((article) => article.slug));
 export const articles = refreshedCatalog.filter((article) =>
-  emergencyArticlePattern.test(
+  novemberSlugs.has(article.slug) || emergencyArticlePattern.test(
     `${article.title} ${article.description} ${article.intro}`
   )
 );

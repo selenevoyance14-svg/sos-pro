@@ -11,7 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Homepage
   entries.push({
     url: BASE_URL,
-    lastModified: REVIEW_DATE,
+    lastModified: new Date("2026-11-06"),
     changeFrequency: "weekly",
     priority: 1,
   });
@@ -39,7 +39,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Blog index
   entries.push({
     url: `${BASE_URL}/blog`,
-    lastModified: REVIEW_DATE,
+    lastModified: new Date("2026-11-06"),
     changeFrequency: "weekly",
     priority: 0.7,
   });
