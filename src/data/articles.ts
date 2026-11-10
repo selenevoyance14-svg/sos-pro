@@ -1,3 +1,6 @@
+import { articlesCommerces } from "./articles-commerces";
+import { articlesEquipement } from "./articles-equipement";
+import { articlesLocaux } from "./articles-locaux";
 import { articlesNovembre2026 } from "./articles-novembre-2026";
 import { articlesOctobre2026, articleUpdates } from "./articles-octobre-2026";
 import { articlesBatch2 } from "./articles-batch2";
@@ -18,6 +21,7 @@ export type Article = {
   metier: string;
   date: string;
   updated?: string;
+  collection?: "equipement" | "commerces" | "villes";
   sources?: { label: string; href: string }[];
   readTime: number;
   intro: string;
@@ -4393,11 +4397,16 @@ const emergencyArticlePattern =
   /(urgence|fuite|panne|serrure|porte bloquée|effraction|disjoncteur|chauffage|chaudière|vitre cassée|batterie|pneu crevé|intoxication|vétérinaire de garde)/i;
 
 const novemberSlugs = new Set(articlesNovembre2026.map((article) => article.slug));
-export const articles = refreshedCatalog.filter((article) =>
-  novemberSlugs.has(article.slug) || emergencyArticlePattern.test(
-    `${article.title} ${article.description} ${article.intro}`
-  )
-);
+export const articles = [
+  ...refreshedCatalog.filter((article) =>
+    novemberSlugs.has(article.slug) || emergencyArticlePattern.test(
+      `${article.title} ${article.description} ${article.intro}`
+    )
+  ),
+  ...articlesEquipement,
+  ...articlesCommerces,
+  ...articlesLocaux,
+];
 
 export function getArticleBySlug(slug: string): Article | undefined {
   return articles.find((a) => a.slug === slug);

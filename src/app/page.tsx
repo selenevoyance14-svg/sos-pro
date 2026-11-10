@@ -227,6 +227,11 @@ export default function HomePage() {
                 Tous les guides →
               </Link>
             </div>
+            <nav aria-label="Rubriques du blog" className="mt-6 flex flex-wrap gap-x-5 gap-y-3 text-sm font-semibold text-red-700">
+              <Link href="/blog/#equipement" className="hover:underline">Équipement et produits</Link>
+              <Link href="/blog/#commerces" className="hover:underline">Commerces et artisans</Link>
+              <Link href="/blog/#villes" className="hover:underline">Démarches par ville</Link>
+            </nav>
             <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
               {latestArticles.map((article) => (
                 <Link

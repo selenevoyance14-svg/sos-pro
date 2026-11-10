@@ -36,7 +36,7 @@ export async function generateMetadata({
   return {
     title: { absolute: a.title },
     description: a.description,
-    alternates: { canonical: `/blog/${a.slug}` },
+    alternates: { canonical: `/blog/${a.slug}/` },
     twitter: { card: "summary_large_image", title: a.title, description: a.description, images: ["/opengraph-image"] },
     openGraph: {
       url: `https://sos-pro.fr/blog/${a.slug}/`,
@@ -188,7 +188,7 @@ export default function ArticlePage({
     image: "https://sos-pro.fr/opengraph-image",
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": `https://sos-pro.fr/blog/${a.slug}`,
+      "@id": `https://sos-pro.fr/blog/${a.slug}/`,
     },
   };
 
@@ -219,7 +219,7 @@ export default function ArticlePage({
             Accueil
           </Link>
           {" › "}
-          <Link href="/blog" className="hover:text-red-600">
+          <Link href={a.collection ? `/blog/#${a.collection}` : "/blog/"} className="hover:text-red-600">
             Blog
           </Link>
           {" › "}

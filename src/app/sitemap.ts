@@ -3,6 +3,10 @@ import { metiers, categories } from "@/data/metiers";
 import { articles } from "@/data/articles";
 
 const BASE_URL = "https://sos-pro.fr";
+const LATEST_ARTICLE_DATE = articles.reduce((latest, article) => {
+  const date = article.updated || article.date;
+  return date > latest ? date : latest;
+}, "2026-11-06");
 const REVIEW_DATE = new Date("2026-10-14");
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -11,7 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Homepage
   entries.push({
     url: BASE_URL,
-    lastModified: new Date("2026-11-06"),
+    lastModified: new Date(LATEST_ARTICLE_DATE),
     changeFrequency: "weekly",
     priority: 1,
   });
@@ -38,8 +42,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // Blog index
   entries.push({
-    url: `${BASE_URL}/blog`,
-    lastModified: new Date("2026-11-06"),
+    url: `${BASE_URL}/blog/`,
+    lastModified: new Date(LATEST_ARTICLE_DATE),
     changeFrequency: "weekly",
     priority: 0.7,
   });
@@ -47,7 +51,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Blog articles
   for (const a of articles) {
     entries.push({
-      url: `${BASE_URL}/blog/${a.slug}`,
+      url: `${BASE_URL}/blog/${a.slug}/`,
       lastModified: new Date(a.updated || a.date),
       changeFrequency: "monthly",
       priority: 0.7,

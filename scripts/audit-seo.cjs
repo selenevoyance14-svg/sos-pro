@@ -55,7 +55,8 @@ const cityPages = pages.filter((file) => {
   return relative.split(path.sep).length >= 3 && !relative.startsWith(`blog${path.sep}`) && !relative.startsWith(`categorie${path.sep}`);
 });
 if (cityPages.length) issues.push(`${cityPages.length} page(s) ville inattendue(s) dans l’export`);
-if (pages.length > 60) issues.push(`export anormalement volumineux (${pages.length} pages HTML)`);
+const nonBlogPages = pages.filter((file) => !path.relative(out, file).startsWith(`blog${path.sep}`));
+if (nonBlogPages.length > 60) issues.push(`export hors blog anormalement volumineux (${nonBlogPages.length} pages HTML)`);
 
 if (issues.length) {
   console.error(`Audit SEO échoué (${issues.length} problème(s)):\n- ${issues.join("\n- ")}`);
